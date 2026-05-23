@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wisen — Why NZ businesses overpay for marketing</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── BLOG POST ── */
+    .post-header { padding: 64px 48px 48px; border-bottom: 1px solid var(--rule); max-width: 760px; }
+    .post-back { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; font-weight: 500; margin-bottom: 32px; transition: color 0.18s; }
+    .post-back:hover { color: var(--mauve); }
+    .post-back svg { transition: transform 0.18s; }
+    .post-back:hover svg { transform: translateX(-3px); }
+    .post-meta { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .post-tag { font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; background: var(--mauve-pale); color: var(--mauve); }
+    .post-date { font-size: 10px; color: var(--ink-faint); font-weight: 300; }
+    .post-read-time { font-size: 10px; color: var(--ink-faint); font-weight: 300; }
+    .post-title { font-family: 'Lora', serif; font-weight: 400; font-size: clamp(28px, 4vw, 44px); line-height: 1.1; margin-bottom: 20px; }
+    .post-intro { font-size: 15px; color: var(--ink-light); font-weight: 300; line-height: 1.85; max-width: 600px; }
+
+    /* Article body */
+    .post-body { padding: 56px 48px; display: grid; grid-template-columns: 680px 1fr; gap: 80px; align-items: start; max-width: 1100px; }
+    .post-content h2 { font-family: 'Lora', serif; font-weight: 400; font-size: 22px; margin-top: 44px; margin-bottom: 16px; line-height: 1.2; }
+    .post-content h2:first-child { margin-top: 0; }
+    .post-content p { font-size: 13px; color: var(--ink-light); font-weight: 300; line-height: 1.9; margin-bottom: 18px; }
+    .post-content strong { color: var(--ink); font-weight: 500; }
+    .post-callout { background: var(--linen); border-left: 3px solid var(--mauve); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 28px 0; }
+    .post-callout p { margin-bottom: 0; font-size: 13px; color: var(--ink-light); line-height: 1.8; font-weight: 300; }
+    .post-callout strong { color: var(--mauve); }
+
+    /* Sidebar */
+    .post-sidebar { position: sticky; top: 96px; }
+    .sidebar-label { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mauve); font-weight: 500; margin-bottom: 16px; }
+    .sidebar-link { display: block; font-size: 11px; color: var(--ink-light); font-weight: 300; text-decoration: none; padding: 10px 0; border-bottom: 1px solid var(--linen-dark); line-height: 1.5; transition: color 0.18s; }
+    .sidebar-link:last-child { border-bottom: none; }
+    .sidebar-link:hover { color: var(--mauve); }
+    .sidebar-report { margin-top: 40px; background: var(--ink); border-radius: 10px; padding: 24px 20px; }
+    .sidebar-report-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mauve-l); font-weight: 500; margin-bottom: 12px; }
+    .sidebar-report-title { font-family: 'Lora', serif; font-size: 16px; font-weight: 400; color: var(--parchment); margin-bottom: 10px; line-height: 1.3; }
+    .sidebar-report-link { display: inline-block; margin-top: 14px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mauve-l); font-weight: 500; text-decoration: none; transition: color 0.18s; }
+    .sidebar-report-link:hover { color: var(--parchment); }
+
+    /* Post footer / more posts */
+    .post-more { padding: 56px 48px; border-top: 1px solid var(--rule); }
+    .post-more-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mauve); font-weight: 500; margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+    .post-more-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+    .post-more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+    .post-more-card { background: var(--parchment); padding: 24px 22px; text-decoration: none; display: block; transition: background 0.18s; }
+    .post-more-card:hover { background: var(--linen); }
+    .post-more-tag { font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mauve-l); margin-bottom: 10px; display: block; }
+    .post-more-title { font-family: 'Lora', serif; font-size: 15px; font-weight: 400; color: var(--ink); line-height: 1.3; margin-bottom: 8px; }
+    .post-more-date { font-size: 10px; color: var(--ink-faint); font-weight: 300; }
+
+    @media (max-width: 900px) {
+      .post-header { padding: 40px 20px 32px; }
+      .post-body { grid-template-columns: 1fr; gap: 40px; padding: 40px 20px; }
+      .post-sidebar { position: static; }
+      .post-more { padding: 40px 20px; }
+      .post-more-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HEADER ════════════════════════════════════════════════ -->
+  <header class="site-header">
+    <a class="wordmark" href="../index.html">wis<em>e</em>n</a>
+    <div class="site-nav-centre">
+      <div class="site-nav-dropdown">
+        <button class="site-nav-dropdown-trigger">
+          Reports
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="site-nav-dropdown-menu">
+          <a class="site-nav-dropdown-item" href="social-media.html">
+            <span class="site-nav-dropdown-num">01</span>
+            <span class="site-nav-dropdown-label">Social Media Pricing</span>
+          </a>
+          <a class="site-nav-dropdown-item" href="website-costs.html">
+            <span class="site-nav-dropdown-num">02</span>
+            <span class="site-nav-dropdown-label">Website Build &amp; Maintenance</span>
+          </a>
+          <a class="site-nav-dropdown-item" href="paid-ads.html">
+            <span class="site-nav-dropdown-num">03</span>
+            <span class="site-nav-dropdown-label">Paid Ads Benchmarks</span>
+          </a>
+          <div class="site-nav-dropdown-divider"></div>
+          <a class="site-nav-dropdown-item" href="disclaimer.html">
+            <span class="site-nav-dropdown-num">&#x2197;</span>
+            <span class="site-nav-dropdown-label">Data Sources &amp; Methodology</span>
+          </a>
+        </div>
+      </div>
+      <a class="site-nav-link active" href="blog.html">Blog</a>
+      <a class="site-nav-link" href="contact.html">Contact</a>
+    </div>
+    <div class="header-right">
+      <div class="currency-pills">
+        <button class="currency-pill active" onclick="setCurrency('both',this)">NZD + AUD</button>
+        <button class="currency-pill"        onclick="setCurrency('nzd',this)">NZD</button>
+        <button class="currency-pill"        onclick="setCurrency('aud',this)">AUD</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══ POST HEADER ═══════════════════════════════════════════ -->
+  <div class="post-header">
+    <a class="post-back" href="blog.html">
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+        <path d="M5 1L1 5l4 4M1 5h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      All posts
+    </a>
+    <div class="post-meta">
+      <span class="post-tag">Agency pricing</span>
+      <span class="post-date">23 May 2026</span>
+      <span class="post-read-time">6 min read</span>
+    </div>
+    <h1 class="post-title">Why NZ businesses overpay for marketing — and how to know if you are</h1>
+    <p class="post-intro">Most small businesses in New Zealand have no reference point for what marketing actually costs. Here's what to look for — and how to ask better questions before you sign anything.</p>
+  </div>
+
+  <!-- ══ POST BODY ══════════════════════════════════════════════ -->
+  <div class="post-body">
+    <article class="post-content">
+
+      <h2>The information gap is not accidental</h2>
+      <p>Agencies in New Zealand rarely publish their rates. This is not an oversight — it is a structural advantage. When you don't know what things cost, you can't negotiate from a position of knowledge. You rely on what the agency tells you, which is naturally framed in their favour.</p>
+      <p>This information gap is wider in NZ than in most comparable markets. The industry is small, concentrated in a handful of cities, and relationship-driven enough that public price comparison feels impolite. The result is that pricing is set in conversations, not on pricing pages — and the business owner usually comes into that conversation underprepared.</p>
+
+      <div class="post-callout">
+        <p><strong>The core problem:</strong> without a benchmark, every quote looks reasonable. An agency charging $4,000/month for social media management sounds credible if you've never heard that the market rate for comparable work starts at $1,500.</p>
+      </div>
+
+      <h2>Three patterns that lead to overpaying</h2>
+      <p><strong>Bundling without transparency.</strong> A common agency structure is to quote a monthly retainer that covers "social media, content, and strategy" as a single line item. This makes it impossible to know what you're paying per deliverable, which makes it impossible to assess value. Ask for a breakdown: how many posts, what does strategy mean in practice, what does reporting include?</p>
+      <p><strong>The percentage-of-spend model at low budgets.</strong> Charging 15–20% of your ad spend as a management fee is common and not inherently unreasonable at scale. At a $1,000/month ad budget it means you're paying $150–$200/month for management — which sounds fine until you realise that's 2–3 hours of work at standard agency rates for an account that needs significantly more attention than that to perform well.</p>
+      <p><strong>Annual contracts without performance clauses.</strong> Locking in for 12 months is standard practice. Locking in for 12 months with no defined deliverables, no reporting cadence, and no exit provisions is a different thing entirely. Always ask what happens if the relationship isn't working at month three.</p>
+
+      <h2>Questions worth asking before you sign</h2>
+      <p>These are not adversarial questions. They are the questions any well-run agency should be able to answer clearly:</p>
+      <p>What specifically is included in this retainer each month? How many hours is that, at what rate? Who will actually be working on my account — the person I'm meeting with, or a junior? How often will we meet, and what will reporting cover? What does success look like at 90 days, and how will we measure it?</p>
+      <p>If any of these questions produce vague answers, that is itself useful information.</p>
+
+      <h2>What the data shows</h2>
+      <p>Across the NZ and AU agencies we researched for Wisen's social media report, growth-tier retainers — covering 2 platforms, 8–12 posts per month, basic strategy, and monthly reporting — run $1,500–$3,000 NZD per month from boutique agencies. The same scope from a mid-to-large agency starts at $3,000 and climbs quickly.</p>
+      <p>That range is not small. A business paying $3,500/month for growth-tier social management from a boutique agency is paying above market. The same business paying $1,500/month from an experienced freelancer may be getting comparable output for significantly less.</p>
+      <p>The difference is almost never quality of outcome — it is overhead, account management structures, and the cost of the agency's own marketing being baked into your retainer.</p>
+
+      <div class="post-callout">
+        <p><strong>A useful rule of thumb:</strong> if you can't articulate what you received last month for your retainer fee — in specific deliverables, not vague activity — that is worth raising in your next agency meeting.</p>
+      </div>
+
+      <h2>This is what Wisen is for</h2>
+      <p>The reports on this site exist to give NZ and AU businesses a reference point. Not to replace agency relationships, which are often genuinely valuable, but to make those relationships more equitable. A business owner who knows that growth-tier social media management runs $1,500–$3,000/month is a different negotiating partner than one who doesn't.</p>
+      <p>If you're about to brief an agency, or are questioning whether your current spend is reasonable, start with the relevant report. The numbers won't tell you everything — context, scope, and relationship always matter — but they'll tell you whether the conversation you're about to have is in the right territory.</p>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="post-sidebar">
+      <div class="sidebar-label">More from the blog</div>
+      <a class="sidebar-link" href="blog.html">What a realistic Google Ads budget looks like for a NZ trades business</a>
+      <a class="sidebar-link" href="blog.html">The percentage-of-spend model: why it's common and why it's worth questioning</a>
+      <a class="sidebar-link" href="blog.html">The real cost of a cheap website build in 2026</a>
+
+      <div class="sidebar-report">
+        <div class="sidebar-report-label">Related report</div>
+        <div class="sidebar-report-title">Social Media Agency Pricing — NZ &amp; AU 2026</div>
+        <a class="sidebar-report-link" href="social-media.html">View report →</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ══ MORE POSTS ═════════════════════════════════════════════ -->
+  <div class="post-more">
+    <div class="post-more-label">More articles</div>
+    <div class="post-more-grid">
+      <a class="post-more-card" href="blog.html">
+        <span class="post-more-tag">Google Ads</span>
+        <div class="post-more-title">What a realistic Google Ads budget looks like for a NZ trades business</div>
+        <div class="post-more-date">18 May 2026</div>
+      </a>
+      <a class="post-more-card" href="blog.html">
+        <span class="post-more-tag">Social media</span>
+        <div class="post-more-title">The percentage-of-spend model: why it's common and why it's worth questioning</div>
+        <div class="post-more-date">12 May 2026</div>
+      </a>
+      <a class="post-more-card" href="blog.html">
+        <span class="post-more-tag">Websites</span>
+        <div class="post-more-title">The real cost of a cheap website build in 2026</div>
+        <div class="post-more-date">5 May 2026</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-copy">&copy; 2026 Wisen</div>
+    <nav class="footer-nav">
+      <a class="footer-nav-link" href="../index.html#reports">Reports</a>
+      <a class="footer-nav-link" href="blog.html">Blog</a>
+      <a class="footer-nav-link" href="contact.html">Contact</a>
+      <a class="footer-nav-link" href="disclaimer.html">Data &amp; Disclaimer</a>
+    </nav>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
