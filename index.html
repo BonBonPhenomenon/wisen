@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wisen — Marketing Intelligence NZ &amp; AU</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --parchment: #F5F1EB; --linen: #EDE8E0; --linen-dark: #E0D9CE;
+      --ink: #2C2820; --ink-light: #6B6358; --ink-faint: #A89F93;
+      --mauve: #8E6B7E; --mauve-l: #B89AAA; --mauve-pale: #EEE3E9;
+      --olive: #6B7A45; --olive-l: #8A9A5B; --olive-pale: #E8EDD8;
+      --rule: #D5CDBE;
+    }
+    body { background: var(--parchment); font-family: 'Poppins', sans-serif; color: var(--ink); min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* ══ NAV ══════════════════════════════════════════════════════ */
+    .nav {
+      padding: 0 48px;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      background: var(--parchment);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav-wordmark {
+      font-family: 'Lora', serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: var(--ink);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+      flex-shrink: 0;
+    }
+    .nav-wordmark em { font-style: italic; color: var(--mauve); }
+
+    /* Centre links */
+    .nav-links {
+      display: flex;
+      align-items: stretch;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+    }
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 0 18px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.18s;
+      white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link.active { color: var(--mauve); border-bottom-color: var(--mauve); }
+
+    /* Reports dropdown */
+    .nav-dropdown { position: relative; display: flex; align-items: stretch; }
+    .nav-dropdown-trigger {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 18px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.18s;
+    }
+    .nav-dropdown-trigger svg { transition: transform 0.18s; }
+    .nav-dropdown:hover .nav-dropdown-trigger { color: var(--ink); }
+    .nav-dropdown:hover .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 1px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      background: var(--parchment);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      min-width: 240px;
+      padding: 8px 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.18s;
+      box-shadow: 0 8px 24px rgba(44,40,32,0.08);
+      z-index: 30;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown-item { display: flex; flex-direction: column; padding: 12px 18px; text-decoration: none; transition: background 0.14s; }
+    .nav-dropdown-item:hover { background: var(--linen); }
+    .nav-dropdown-item-num { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mauve-l); font-weight: 500; margin-bottom: 3px; }
+    .nav-dropdown-item-label { font-size: 12px; color: var(--ink); font-weight: 400; }
+    .nav-dropdown-divider { height: 1px; background: var(--rule); margin: 6px 0; }
+
+    /* Right side */
+    .nav-right { display: flex; align-items: center; padding: 14px 0; gap: 0; }
+    .currency-pills { display: flex; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+    .currency-pill { padding: 7px 11px; font-size: 10px; font-weight: 500; letter-spacing: 0.06em; cursor: pointer; border: none; background: transparent; color: var(--ink-faint); font-family: 'Poppins', sans-serif; transition: all 0.18s; }
+    .currency-pill + .currency-pill { border-left: 1px solid var(--rule); }
+    .currency-pill.active { background: var(--ink); color: var(--parchment); }
+    .currency-pill:hover:not(.active) { background: var(--linen); color: var(--ink); }
+
+    /* ══ HERO ═════════════════════════════════════════════════════ */
+    .hero { padding: 100px 48px 96px; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .hero-eyebrow { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--mauve); font-weight: 500; margin-bottom: 20px; }
+    .hero-title { font-family: 'Lora', serif; font-weight: 400; font-size: clamp(40px, 5vw, 64px); line-height: 1.06; margin-bottom: 24px; }
+    .hero-title strong { font-style: italic; color: var(--mauve); font-weight: 600; }
+    .hero-body { font-size: 14px; color: var(--ink-light); line-height: 1.85; font-weight: 300; max-width: 420px; margin-bottom: 36px; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: var(--parchment); font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 14px 24px; border-radius: 6px; transition: background 0.18s; }
+    .hero-cta:hover { background: var(--mauve); }
+    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 10px; color: var(--ink-light); font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 14px 0; margin-left: 24px; transition: color 0.18s; }
+    .hero-cta-secondary:hover { color: var(--mauve); }
+    .hero-right { display: flex; flex-direction: column; gap: 8px; }
+    .hero-stat-row { background: var(--parchment); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; transition: background 0.18s; }
+    .hero-stat-row:hover { background: var(--linen); }
+    .hero-stat-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); font-weight: 500; margin-bottom: 5px; }
+    .hero-stat-value { font-family: 'Lora', serif; font-size: 26px; font-weight: 400; color: var(--ink); line-height: 1; }
+    .hero-stat-value.m { color: var(--mauve); }
+    .hero-stat-value.o { color: var(--olive); }
+    .hero-stat-sub { font-size: 10px; color: var(--ink-faint); font-weight: 300; margin-top: 3px; }
+
+    /* ══ ABOUT ════════════════════════════════════════════════════ */
+    .about-strip { padding: 72px 48px; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+    .about-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mauve); font-weight: 500; padding-top: 6px; }
+    .about-title { font-family: 'Lora', serif; font-weight: 400; font-size: 28px; margin-bottom: 20px; line-height: 1.2; }
+    .about-body { font-size: 13px; color: var(--ink-light); line-height: 1.85; font-weight: 300; max-width: 580px; }
+    .about-pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin-top: 36px; }
+    .pillar { background: var(--parchment); padding: 24px 20px; }
+    .pillar-word { font-family: 'Lora', serif; font-size: 18px; font-weight: 400; margin-bottom: 10px; }
+    .pillar-word em { font-style: italic; color: var(--mauve); }
+    .pillar-desc { font-size: 11px; color: var(--ink-faint); font-weight: 300; line-height: 1.7; }
+
+    /* ══ REPORTS ══════════════════════════════════════════════════ */
+    .reports-section { padding: 72px 48px; border-bottom: 1px solid var(--rule); }
+    .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 32px; }
+    .section-eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mauve); font-weight: 500; }
+    .reports-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+    .report-card { background: var(--parchment); padding: 32px 28px; text-decoration: none; display: block; transition: background 0.18s; }
+    .report-card:hover { background: var(--linen); }
+    .report-card-num { font-family: 'Lora', serif; font-size: 13px; font-weight: 400; color: var(--mauve-l); margin-bottom: 16px; letter-spacing: 0.06em; }
+    .report-card-title { font-family: 'Lora', serif; font-size: 19px; font-weight: 400; margin-bottom: 10px; line-height: 1.25; color: var(--ink); }
+    .report-card-body { font-size: 12px; color: var(--ink-light); font-weight: 300; line-height: 1.7; margin-bottom: 20px; }
+    .report-card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+    .tag { font-size: 10px; font-weight: 500; letter-spacing: 0.06em; padding: 3px 9px; border-radius: 20px; border: 1px solid var(--rule); color: var(--ink-faint); }
+    .report-card-cta { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mauve); font-weight: 500; }
+    .report-card.coming-soon { opacity: 0.5; cursor: default; pointer-events: none; }
+    .coming-badge { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; background: var(--linen-dark); color: var(--ink-faint); margin-bottom: 14px; }
+
+    /* ══ HOW IT WORKS ═════════════════════════════════════════════ */
+    .how-strip { padding: 72px 48px; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+    .how-steps { display: flex; flex-direction: column; }
+    .how-step { display: grid; grid-template-columns: 40px 1fr; gap: 20px; padding: 24px 0; border-bottom: 1px solid var(--linen-dark); align-items: start; }
+    .how-step:last-child { border-bottom: none; }
+    .how-step-num { font-family: 'Lora', serif; font-size: 20px; font-weight: 400; color: var(--mauve-l); padding-top: 2px; }
+    .how-step-title { font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+    .how-step-body { font-size: 12px; color: var(--ink-light); font-weight: 300; line-height: 1.7; }
+
+    /* ══ FOOTER ═══════════════════════════════════════════════════ */
+    .site-footer {
+      margin-top: auto;
+      border-top: 1px solid var(--rule);
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .footer-copy { font-size: 10px; color: var(--ink-faint); font-weight: 300; }
+    .footer-nav { display: flex; gap: 24px; align-items: center; }
+    .footer-nav-link { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; transition: color 0.18s; }
+    .footer-nav-link:hover { color: var(--ink); }
+
+    /* ══ RESPONSIVE ═══════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .nav { padding: 0 24px; }
+      .nav-links { position: static; transform: none; height: auto; }
+      .hero { grid-template-columns: 1fr; padding: 64px 24px; gap: 48px; }
+      .hero-right { display: none; }
+      .about-strip, .how-strip { grid-template-columns: 1fr; gap: 32px; padding: 48px 24px; }
+      .reports-section { padding: 48px 24px; }
+      .reports-grid { grid-template-columns: 1fr; }
+      .about-pillars { grid-template-columns: 1fr; }
+      .site-footer { padding: 20px 24px; flex-wrap: wrap; gap: 14px; }
+      .footer-nav { gap: 16px; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAV ════════════════════════════════════════════════════ -->
+  <nav class="nav">
+    <a class="nav-wordmark" href="index.html">wis<em>e</em>n</a>
+
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger">
+          Reports
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a class="nav-dropdown-item" href="pages/social-media.html">
+            <span class="nav-dropdown-item-num">01</span>
+            <span class="nav-dropdown-item-label">Social Media Pricing</span>
+          </a>
+          <a class="nav-dropdown-item" href="pages/website-costs.html">
+            <span class="nav-dropdown-item-num">02</span>
+            <span class="nav-dropdown-item-label">Website Build &amp; Maintenance</span>
+          </a>
+          <a class="nav-dropdown-item" href="pages/paid-ads.html">
+            <span class="nav-dropdown-item-num">03</span>
+            <span class="nav-dropdown-item-label">Paid Ads Benchmarks</span>
+          </a>
+          <div class="nav-dropdown-divider"></div>
+          <a class="nav-dropdown-item" href="pages/disclaimer.html">
+            <span class="nav-dropdown-item-num">↗</span>
+            <span class="nav-dropdown-item-label">Data Sources &amp; Methodology</span>
+          </a>
+        </div>
+      </div>
+      <a class="nav-link" href="#">Blog</a>
+      <a class="nav-link" href="#">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <div class="currency-pills">
+        <button class="currency-pill active" onclick="setCurrency('both',this)">NZD + AUD</button>
+        <button class="currency-pill"        onclick="setCurrency('nzd',this)">NZD</button>
+        <button class="currency-pill"        onclick="setCurrency('aud',this)">AUD</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ═══════════════════════════════════════════════════ -->
+  <section class="hero">
+    <div>
+      <div class="hero-eyebrow">Market Intelligence · NZ &amp; AU</div>
+      <h1 class="hero-title">Marketing pricing,<br><strong>made clear</strong></h1>
+      <p class="hero-body">Wisen translates agency benchmarks, platform costs, and market data into structured intelligence — so NZ and AU businesses can make informed decisions without guessing.</p>
+      <div>
+        <a class="hero-cta" href="#reports">View reports</a>
+        <a class="hero-cta-secondary" href="pages/disclaimer.html">How we research ↗</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <div class="hero-stat-label">NZ avg Google CPC</div>
+          <div class="hero-stat-value m">$3.24</div>
+          <div class="hero-stat-sub">NZD · search campaigns · 2026</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-label">AU avg Google CPC</div>
+          <div class="hero-stat-value o">$4.12</div>
+          <div class="hero-stat-sub">AUD · search campaigns · 2026</div>
+        </div>
+      </div>
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <div class="hero-stat-label">NZ brochure website</div>
+          <div class="hero-stat-value m">$4–8k</div>
+          <div class="hero-stat-sub">NZD · agency build · 2026</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-label">Social media — growth tier</div>
+          <div class="hero-stat-value o">$1.5–3k</div>
+          <div class="hero-stat-sub">NZD / month · agency retainer</div>
+        </div>
+      </div>
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <div class="hero-stat-label">Reports published</div>
+          <div class="hero-stat-value">3</div>
+          <div class="hero-stat-sub">Social · website · paid ads</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-label">Sources researched</div>
+          <div class="hero-stat-value">26+</div>
+          <div class="hero-stat-sub">NZ and AU agencies · 2025–2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHAT IS WISEN ══════════════════════════════════════════ -->
+  <section class="about-strip">
+    <div class="about-label">What is Wisen</div>
+    <div>
+      <h2 class="about-title">Rigorous research,<br>presented with care</h2>
+      <p class="about-body">Marketing pricing in New Zealand and Australia is opaque by design. Agencies rarely publish rates. Benchmarks default to US figures. Small businesses end up guessing — or overpaying. Wisen exists to fix that. We research real agency pricing, published benchmarks, and platform data, then present it in a format decision-makers can actually use.</p>
+      <div class="about-pillars">
+        <div class="pillar">
+          <div class="pillar-word">Consid<em>e</em>red</div>
+          <div class="pillar-desc">Every data point is sourced, dated, and scoped to the NZ and AU market.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-word">Transp<em>a</em>rent</div>
+          <div class="pillar-desc">We show our sources and acknowledge where data is estimated or limited.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-word">Dir<em>e</em>ct</div>
+          <div class="pillar-desc">Ranges, not vague approximations. Numbers you can use in a conversation.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ REPORTS ════════════════════════════════════════════════ -->
+  <section class="reports-section" id="reports">
+    <div class="section-header">
+      <div class="section-eyebrow">Current reports · 2025–2026</div>
+    </div>
+    <div class="reports-grid">
+      <a class="report-card" href="pages/social-media.html">
+        <div class="report-card-num">Report 01</div>
+        <div class="report-card-title">Social Media Agency Pricing</div>
+        <div class="report-card-body">Monthly retainer packages, per-post content costs, real agency examples, and hourly rate benchmarks across NZ and AU.</div>
+        <div class="report-card-tags">
+          <span class="tag">Monthly packages</span>
+          <span class="tag">Per-post rates</span>
+          <span class="tag">Hourly rates</span>
+        </div>
+        <div class="report-card-cta">View report →</div>
+      </a>
+      <a class="report-card" href="pages/website-costs.html">
+        <div class="report-card-num">Report 02</div>
+        <div class="report-card-title">Website Build &amp; Maintenance</div>
+        <div class="report-card-body">Build costs by site type and provider, maintenance plan tiers, ongoing infrastructure costs, and first-year total estimators.</div>
+        <div class="report-card-tags">
+          <span class="tag">Build costs</span>
+          <span class="tag">Maintenance</span>
+          <span class="tag">Hosting</span>
+        </div>
+        <div class="report-card-cta">View report →</div>
+      </a>
+      <a class="report-card" href="pages/paid-ads.html">
+        <div class="report-card-num">Report 03</div>
+        <div class="report-card-title">Paid Ads Benchmarks</div>
+        <div class="report-card-body">Google Ads and Meta Ads CPC, CPM, and conversion benchmarks by industry, plus management fee structures and budget planning.</div>
+        <div class="report-card-tags">
+          <span class="tag">Google Ads</span>
+          <span class="tag">Meta Ads</span>
+          <span class="tag">By industry</span>
+        </div>
+        <div class="report-card-cta">View report →</div>
+      </a>
+      <a class="report-card coming-soon" href="#">
+        <div class="coming-badge">Coming soon</div>
+        <div class="report-card-num">Report 04</div>
+        <div class="report-card-title">SEO Services Pricing</div>
+        <div class="report-card-body">Local SEO, technical audits, and monthly retainer benchmarks for NZ and AU agencies.</div>
+        <div class="report-card-tags">
+          <span class="tag">Local SEO</span>
+          <span class="tag">Technical audits</span>
+          <span class="tag">Retainers</span>
+        </div>
+      </a>
+      <a class="report-card coming-soon" href="#">
+        <div class="coming-badge">Coming soon</div>
+        <div class="report-card-num">Report 05</div>
+        <div class="report-card-title">Copywriting &amp; Content Rates</div>
+        <div class="report-card-body">Blog posts, email sequences, landing pages, and social captions — what NZ and AU copywriters charge.</div>
+        <div class="report-card-tags">
+          <span class="tag">Copywriting</span>
+          <span class="tag">Content strategy</span>
+          <span class="tag">Email</span>
+        </div>
+      </a>
+      <a class="report-card coming-soon" href="#">
+        <div class="coming-badge">Coming soon</div>
+        <div class="report-card-num">Report 06</div>
+        <div class="report-card-title">Photography &amp; Video Production</div>
+        <div class="report-card-body">Day rates, half-day rates, and project costs for commercial photography and video across NZ and AU.</div>
+        <div class="report-card-tags">
+          <span class="tag">Photography</span>
+          <span class="tag">Video</span>
+          <span class="tag">Day rates</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══ HOW IT WORKS ══════════════════════════════════════════ -->
+  <section class="how-strip">
+    <div class="about-label">How we work</div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-step-num">01</div>
+        <div>
+          <div class="how-step-title">We research publicly available data</div>
+          <div class="how-step-body">Agency pricing pages, published benchmarks, industry reports, and platform documentation — sourced directly, not aggregated from other summaries.</div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">02</div>
+        <div>
+          <div class="how-step-title">We scope it to NZ and AU</div>
+          <div class="how-step-body">Most benchmarks default to US data. We prioritise local sources, and where NZ-specific data is thin, we apply known market factors and say so clearly.</div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">03</div>
+        <div>
+          <div class="how-step-title">We present ranges, not false precision</div>
+          <div class="how-step-body">Pricing varies. We show realistic ranges by provider type and tier, so you can find where you sit — not just a single number that may not apply to you.</div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">04</div>
+        <div>
+          <div class="how-step-title">We date and source everything</div>
+          <div class="how-step-body">Every report states when research was conducted and which sources it draws on. Markets change — so does our data. Each report is versioned accordingly.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-copy">&copy; 2026 Wisen</div>
+    <nav class="footer-nav">
+      <a class="footer-nav-link" href="#reports">Reports</a>
+      <a class="footer-nav-link" href="#">Blog</a>
+      <a class="footer-nav-link" href="#">Contact</a>
+      <a class="footer-nav-link" href="pages/disclaimer.html">Data &amp; Disclaimer</a>
+    </nav>
+  </footer>
+
+  <script>
+    function setCurrency(val, btn) {
+      document.querySelectorAll('.currency-pill').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>

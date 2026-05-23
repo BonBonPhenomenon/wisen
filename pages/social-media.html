@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wisen — Social Media Agency Pricing</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+    <a class="wordmark" href="../index.html">wis<em>e</em>n</a>
+
+    <div class="site-nav-centre">
+      <div class="site-nav-dropdown">
+        <button class="site-nav-dropdown-trigger">
+          Reports
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="site-nav-dropdown-menu">
+          <a class="site-nav-dropdown-item" href="social-media.html">
+            <span class="site-nav-dropdown-num">01</span>
+            <span class="site-nav-dropdown-label">Social Media Pricing</span>
+          </a>
+          <a class="site-nav-dropdown-item" href="website-costs.html">
+            <span class="site-nav-dropdown-num">02</span>
+            <span class="site-nav-dropdown-label">Website Build &amp; Maintenance</span>
+          </a>
+          <a class="site-nav-dropdown-item" href="paid-ads.html">
+            <span class="site-nav-dropdown-num">03</span>
+            <span class="site-nav-dropdown-label">Paid Ads Benchmarks</span>
+          </a>
+          <div class="site-nav-dropdown-divider"></div>
+          <a class="site-nav-dropdown-item" href="disclaimer.html">
+            <span class="site-nav-dropdown-num">&#x2197;</span>
+            <span class="site-nav-dropdown-label">Data Sources &amp; Methodology</span>
+          </a>
+        </div>
+      </div>
+      <a class="site-nav-link" href="#">Blog</a>
+      <a class="site-nav-link" href="#">Contact</a>
+    </div>
+
+    <div class="header-right">
+      <div class="currency-pills">
+        <button class="currency-pill active" onclick="setCurrency('both',this)">NZD + AUD</button>
+        <button class="currency-pill"        onclick="setCurrency('nzd',this)">NZD</button>
+        <button class="currency-pill"        onclick="setCurrency('aud',this)">AUD</button>
+      </div>
+    </div>
+  </header>
+
+<section class="hero">
+        <div>
+          <div class="hero-eyebrow">Report 01 · Market Research</div>
+          <h1 class="hero-title">
+            Agency Pricing<br /><strong>Social Media</strong>
+          </h1>
+          <p class="hero-sub">
+            A structured overview of social media management costs across New
+            Zealand and Australian agencies — from monthly packages to per-post
+            content production rates.
+          </p>
+        </div>
+        <div class="hero-meta">
+          Social Media Pricing Intelligence<br />NZ × AU · 2025–2026<br /><br />Excl.
+          GST · Ad spend billed separately
+        </div>
+      </section>
+
+      <nav class="tab-nav">
+        <button class="tab-btn active" onclick="showTab('s', 'packages', this)">
+          Monthly packages
+        </button>
+        <button class="tab-btn" onclick="showTab('s', 'content', this)">
+          Per-post costs
+        </button>
+        <button class="tab-btn" onclick="showTab('s', 'agencies', this)">
+          Agency examples
+        </button>
+        <button class="tab-btn" onclick="showTab('s', 'hourly', this)">
+          Hourly rates
+        </button>
+      </nav>
+
+      <main class="content">
+        <div id="s-packages" class="panel active">
+          <div class="section-label">Monthly retainer tiers</div>
+          <div class="pkg-grid">
+            <div class="pkg-card">
+              <div class="pkg-accent" style="background: #b89aaa"></div>
+              <div class="pkg-tier">Starter</div>
+              <div class="nzd-block">
+                <div class="pkg-price-label" style="color: #8e6b7e">
+                  NZD / month
+                </div>
+                <div class="pkg-price">$500 <span>– $1,500</span></div>
+              </div>
+              <div class="aud-block">
+                <div class="pkg-price-label" style="color: #6b7a45">
+                  AUD / month
+                </div>
+                <div class="pkg-price">$800 <span>– $1,500</span></div>
+              </div>
+              <div class="pkg-divider"></div>
+              <div class="pkg-inc">
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-m">·</span><span>1 platform</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-m">·</span
+                  ><span>4–8 static posts / mo</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-m">·</span><span>Scheduling only</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-m">·</span><span>Minimal strategy</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-m">·</span><span>Basic reporting</span>
+                </div>
+              </div>
+            </div>
+            <div class="pkg-card">
+              <div class="pkg-accent" style="background: #8e6b7e"></div>
+              <div class="pkg-tier">Growth</div>
+              <div class="nzd-block">
+                <div class="pkg-price-label" style="color: #8e6b7e">
+                  NZD / month
+                </div>
+                <div class="pkg-price">$1,500 <span>– $3,000</span></div>
+              </div>
+              <div class="aud-block">
+                <div class="pkg-price-label" style="color: #6b7a45">
+                  AUD / month
+                </div>
+                <div class="pkg-price">$1,400 <span>– $3,500</span></div>
+              </div>
+              <div class="pkg-divider"></div>
+              <div class="pkg-inc">
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-m">·</span><span>2 platforms</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-m">·</span
+                  ><span>8–12 static posts / mo</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-m">·</span><span>0–1 video / reels</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-m">·</span><span>Content strategy</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-m">·</span><span>Monthly reporting</span>
+                </div>
+              </div>
+            </div>
+            <div class="pkg-card">
+              <div class="pkg-accent" style="background: #6b7a45"></div>
+              <div class="pkg-tier">Professional</div>
+              <div class="nzd-block">
+                <div class="pkg-price-label" style="color: #8e6b7e">
+                  NZD / month
+                </div>
+                <div class="pkg-price">$3,000 <span>– $6,000</span></div>
+              </div>
+              <div class="aud-block">
+                <div class="pkg-price-label" style="color: #6b7a45">
+                  AUD / month
+                </div>
+                <div class="pkg-price">$3,500 <span>– $6,000</span></div>
+              </div>
+              <div class="pkg-divider"></div>
+              <div class="pkg-inc">
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-o">·</span><span>2–3 platforms</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-o">·</span
+                  ><span>12–20 static posts / mo</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-o">·</span><span>4–5 video / reels</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-o">·</span
+                  ><span>Community management</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-o">·</span
+                  ><span>Strategy &amp; analytics</span>
+                </div>
+              </div>
+            </div>
+            <div class="pkg-card">
+              <div class="pkg-accent" style="background: #2c2820"></div>
+              <div class="pkg-tier">Enterprise</div>
+              <div class="nzd-block">
+                <div class="pkg-price-label" style="color: #8e6b7e">
+                  NZD / month
+                </div>
+                <div class="pkg-price">$6,000 <span>– $18,000</span></div>
+              </div>
+              <div class="aud-block">
+                <div class="pkg-price-label" style="color: #6b7a45">
+                  AUD / month
+                </div>
+                <div class="pkg-price">$6,000 <span>– $20,000</span></div>
+              </div>
+              <div class="pkg-divider"></div>
+              <div class="pkg-inc">
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-m">·</span><span>Multi-platform</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-m">·</span
+                  ><span>20+ static posts / mo</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-m">·</span><span>5+ video / reels</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-m">·</span
+                  ><span>Paid ad management</span>
+                </div>
+                <div class="pkg-inc-item">
+                  <span class="pkg-dot-m">·</span
+                  ><span>Dedicated account mgr</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="note m">
+            <strong>Note:</strong> Ad spend is always a separate line item —
+            paid directly to the platform (Meta, TikTok, LinkedIn). Agency fees
+            cover strategy, creation, and management only.
+          </div>
+        </div>
+
+        <div id="s-content" class="panel">
+          <div class="section-label">Per-post costs — static</div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Provider type</th>
+                <th class="nzd-col" style="color: #8e6b7e">NZD / post</th>
+                <th class="aud-col" style="color: #6b7a45">AUD / post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div>Freelancer — junior</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="width: 20%; background: #b89aaa"
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m nzd-col">$50–120</td>
+                <td class="val-o aud-col">$50–150</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Freelancer — experienced</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 38%;
+                        background: linear-gradient(90deg, #b89aaa, #8e6b7e);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m nzd-col">$80–180</td>
+                <td class="val-o aud-col">$100–250</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Boutique agency</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 56%;
+                        background: linear-gradient(90deg, #8e6b7e, #6b7a45);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m nzd-col">$100–250</td>
+                <td class="val-o aud-col">$150–300</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Mid–large agency</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 100%;
+                        background: linear-gradient(90deg, #6b7a45, #2c2820);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m nzd-col">$200–500+</td>
+                <td class="val-o aud-col">$200–500+</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="section-label section-gap">
+            Per-post costs — video / reels
+          </div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th class="nzd-col" style="color: #8e6b7e">NZD / post</th>
+                <th class="aud-col" style="color: #6b7a45">AUD / post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div>Edit only (footage supplied)</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="width: 16%; background: #8a9a5b"
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m nzd-col">$200–450</td>
+                <td class="val-o aud-col">$250–600</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Simple reel — shoot + edit</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 34%;
+                        background: linear-gradient(90deg, #8a9a5b, #6b7a45);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m nzd-col">$380–800</td>
+                <td class="val-o aud-col">$500–1,200</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Professional short-form</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 56%;
+                        background: linear-gradient(90deg, #6b7a45, #8e6b7e);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m nzd-col">$800–2,500</td>
+                <td class="val-o aud-col">$1,000–3,000</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Corporate / promo video</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 100%;
+                        background: linear-gradient(90deg, #8e6b7e, #2c2820);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m nzd-col">$2,500–10,000+</td>
+                <td class="val-o aud-col">$2,500–15,000+</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="note">
+            <strong>Key insight:</strong> Video production is the largest cost
+            driver in any social package. An agency offering regular video
+            production within an $800/month retainer is a red flag — a single
+            well-produced reel typically costs $380–$1,200+ on its own.
+          </div>
+        </div>
+
+        <div id="s-agencies" class="panel">
+          <div class="section-label">Real agency packages — 2025–2026</div>
+          <table class="agency-table">
+            <thead>
+              <tr>
+                <th>Agency</th>
+                <th>Mkt</th>
+                <th>Price / mo</th>
+                <th>Static posts</th>
+                <th>Reels</th>
+                <th>Tier</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SOUP Agency</td>
+                <td><span class="mkt-badge mkt-au">AU</span></td>
+                <td style="font-weight: 500">$1,400/mo</td>
+                <td style="color: #8e6b7e">8</td>
+                <td style="color: #a89f93">—</td>
+                <td>
+                  <span
+                    class="tier-pill"
+                    style="
+                      border-color: #8e6b7e;
+                      color: #8e6b7e;
+                      background: #eee3e9;
+                    "
+                    >Growth</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>SOUP Agency</td>
+                <td><span class="mkt-badge mkt-au">AU</span></td>
+                <td style="font-weight: 500">$2,200/mo</td>
+                <td style="color: #8e6b7e">10</td>
+                <td style="color: #6b7a45">5</td>
+                <td>
+                  <span
+                    class="tier-pill"
+                    style="
+                      border-color: #6b7a45;
+                      color: #6b7a45;
+                      background: #e8edd8;
+                    "
+                    >Professional</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>SOUP Agency</td>
+                <td><span class="mkt-badge mkt-au">AU</span></td>
+                <td style="font-weight: 500">$3,000/mo</td>
+                <td style="color: #8e6b7e">15+</td>
+                <td style="color: #6b7a45">5+</td>
+                <td>
+                  <span
+                    class="tier-pill"
+                    style="
+                      border-color: #6b7a45;
+                      color: #6b7a45;
+                      background: #e8edd8;
+                    "
+                    >Professional</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Designated Marketing</td>
+                <td><span class="mkt-badge mkt-nz">NZ</span></td>
+                <td style="font-weight: 500">$1,000/mo</td>
+                <td style="color: #8e6b7e">~8</td>
+                <td style="color: #6b7a45">1</td>
+                <td>
+                  <span
+                    class="tier-pill"
+                    style="
+                      border-color: #8e6b7e;
+                      color: #8e6b7e;
+                      background: #eee3e9;
+                    "
+                    >Growth</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Designated Marketing</td>
+                <td><span class="mkt-badge mkt-nz">NZ</span></td>
+                <td style="font-weight: 500">$2,000/mo</td>
+                <td style="color: #8e6b7e">~12</td>
+                <td style="color: #6b7a45">1</td>
+                <td>
+                  <span
+                    class="tier-pill"
+                    style="
+                      border-color: #6b7a45;
+                      color: #6b7a45;
+                      background: #e8edd8;
+                    "
+                    >Professional</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Designated Marketing</td>
+                <td><span class="mkt-badge mkt-nz">NZ</span></td>
+                <td style="font-weight: 500">$4,000/mo</td>
+                <td style="color: #8e6b7e">~20+</td>
+                <td style="color: #6b7a45">4+</td>
+                <td>
+                  <span
+                    class="tier-pill"
+                    style="
+                      border-color: #2c2820;
+                      color: #2c2820;
+                      background: #e0d9ce;
+                    "
+                    >Enterprise</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Catalyst Communications</td>
+                <td><span class="mkt-badge mkt-au">AU</span></td>
+                <td style="font-weight: 500">$1,500/mo</td>
+                <td style="color: #a89f93">Strategy only</td>
+                <td style="color: #a89f93">—</td>
+                <td>
+                  <span
+                    class="tier-pill"
+                    style="
+                      border-color: #8e6b7e;
+                      color: #8e6b7e;
+                      background: #eee3e9;
+                    "
+                    >Growth</span
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="note">
+            <strong>Key insight:</strong> Video content is the largest cost
+            driver. An agency offering regular video production within an
+            $800/month retainer is a red flag — a single well-produced reel
+            typically costs $380–$1,200+ on its own.
+          </div>
+        </div>
+
+        <div id="s-hourly" class="panel">
+          <div class="section-label">Hourly rate benchmarks</div>
+          <div class="row-item">
+            <div><div class="row-title">Freelancer — junior</div></div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #8e6b7e">NZD / hr</div>
+              <div class="row-amount" style="color: #8e6b7e">$30–60</div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #6b7a45">AUD / hr</div>
+              <div class="row-amount" style="color: #6b7a45">$30–80</div>
+            </div>
+          </div>
+          <div class="row-item">
+            <div><div class="row-title">Freelancer — experienced</div></div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #8e6b7e">NZD / hr</div>
+              <div class="row-amount" style="color: #8e6b7e">$60–120</div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #6b7a45">AUD / hr</div>
+              <div class="row-amount" style="color: #6b7a45">$80–150</div>
+            </div>
+          </div>
+          <div class="row-item">
+            <div><div class="row-title">Agency</div></div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #8e6b7e">NZD / hr</div>
+              <div class="row-amount" style="color: #8e6b7e">$120–280</div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #6b7a45">AUD / hr</div>
+              <div class="row-amount" style="color: #6b7a45">$120–350</div>
+            </div>
+          </div>
+          <div class="dark-block" style="margin-top: 36px">
+            <div class="dark-label">Monthly cost estimator — agency rates</div>
+            <div class="dark-grid">
+              <div class="dark-card">
+                <div class="dark-card-label">10 hrs / mo</div>
+                <div class="dark-card-val" style="color: var(--mauve-l)">
+                  Light support
+                </div>
+                <div class="dark-card-sub">2–3 posts/wk, scheduling only</div>
+                <div style="margin-top: 14px">
+                  <div
+                    style="
+                      font-size: 9px;
+                      text-transform: uppercase;
+                      letter-spacing: 0.1em;
+                      color: var(--mauve-l);
+                      margin-bottom: 2px;
+                    "
+                  >
+                    NZD / mo
+                  </div>
+                  <div
+                    style="
+                      font-size: 15px;
+                      font-weight: 500;
+                      color: var(--mauve-l);
+                    "
+                  >
+                    $1,200–$2,800
+                  </div>
+                </div>
+                <div style="margin-top: 8px">
+                  <div
+                    style="
+                      font-size: 9px;
+                      text-transform: uppercase;
+                      letter-spacing: 0.1em;
+                      color: var(--olive-l);
+                      margin-bottom: 2px;
+                    "
+                  >
+                    AUD / mo
+                  </div>
+                  <div
+                    style="
+                      font-size: 15px;
+                      font-weight: 500;
+                      color: var(--olive-l);
+                    "
+                  >
+                    $1,200–$3,500
+                  </div>
+                </div>
+              </div>
+              <div class="dark-card">
+                <div class="dark-card-label">25 hrs / mo</div>
+                <div class="dark-card-val" style="color: var(--olive-l)">
+                  Standard
+                </div>
+                <div class="dark-card-sub">Content creation + community</div>
+                <div style="margin-top: 14px">
+                  <div
+                    style="
+                      font-size: 9px;
+                      text-transform: uppercase;
+                      letter-spacing: 0.1em;
+                      color: var(--mauve-l);
+                      margin-bottom: 2px;
+                    "
+                  >
+                    NZD / mo
+                  </div>
+                  <div
+                    style="
+                      font-size: 15px;
+                      font-weight: 500;
+                      color: var(--mauve-l);
+                    "
+                  >
+                    $3,000–$7,000
+                  </div>
+                </div>
+                <div style="margin-top: 8px">
+                  <div
+                    style="
+                      font-size: 9px;
+                      text-transform: uppercase;
+                      letter-spacing: 0.1em;
+                      color: var(--olive-l);
+                      margin-bottom: 2px;
+                    "
+                  >
+                    AUD / mo
+                  </div>
+                  <div
+                    style="
+                      font-size: 15px;
+                      font-weight: 500;
+                      color: var(--olive-l);
+                    "
+                  >
+                    $3,000–$8,750
+                  </div>
+                </div>
+              </div>
+              <div class="dark-card">
+                <div class="dark-card-label">50 hrs / mo</div>
+                <div
+                  class="dark-card-val"
+                  style="color: rgba(255, 255, 255, 0.75)"
+                >
+                  Full-service
+                </div>
+                <div class="dark-card-sub">
+                  Strategy + video + ad management
+                </div>
+                <div style="margin-top: 14px">
+                  <div
+                    style="
+                      font-size: 9px;
+                      text-transform: uppercase;
+                      letter-spacing: 0.1em;
+                      color: var(--mauve-l);
+                      margin-bottom: 2px;
+                    "
+                  >
+                    NZD / mo
+                  </div>
+                  <div
+                    style="
+                      font-size: 15px;
+                      font-weight: 500;
+                      color: var(--mauve-l);
+                    "
+                  >
+                    $6,000–$14,000
+                  </div>
+                </div>
+                <div style="margin-top: 8px">
+                  <div
+                    style="
+                      font-size: 9px;
+                      text-transform: uppercase;
+                      letter-spacing: 0.1em;
+                      color: var(--olive-l);
+                      margin-bottom: 2px;
+                    "
+                  >
+                    AUD / mo
+                  </div>
+                  <div
+                    style="
+                      font-size: 15px;
+                      font-weight: 500;
+                      color: var(--olive-l);
+                    "
+                  >
+                    $6,000–$17,500
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      
+    </div>
+
+    <!-- ════════════════════════════════════════════
+     PAGE: WEBSITE
+════════════════════════════════════════════ -->
+
+    <!-- ══ FOOTER ════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-copy">&copy; 2026 Wisen</div>
+    <nav class="footer-nav">
+      <a class="footer-nav-link" href="../index.html#reports">Reports</a>
+      <a class="footer-nav-link" href="#">Blog</a>
+      <a class="footer-nav-link" href="#">Contact</a>
+      <a class="footer-nav-link" href="disclaimer.html">Data &amp; Disclaimer</a>
+    </nav>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

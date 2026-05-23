@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wisen — Paid Ads Benchmarks NZ &amp; AU</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+    <a class="wordmark" href="../index.html">wis<em>e</em>n</a>
+
+    <div class="site-nav-centre">
+      <div class="site-nav-dropdown">
+        <button class="site-nav-dropdown-trigger">
+          Reports
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="site-nav-dropdown-menu">
+          <a class="site-nav-dropdown-item" href="social-media.html">
+            <span class="site-nav-dropdown-num">01</span>
+            <span class="site-nav-dropdown-label">Social Media Pricing</span>
+          </a>
+          <a class="site-nav-dropdown-item" href="website-costs.html">
+            <span class="site-nav-dropdown-num">02</span>
+            <span class="site-nav-dropdown-label">Website Build &amp; Maintenance</span>
+          </a>
+          <a class="site-nav-dropdown-item" href="paid-ads.html">
+            <span class="site-nav-dropdown-num">03</span>
+            <span class="site-nav-dropdown-label">Paid Ads Benchmarks</span>
+          </a>
+          <div class="site-nav-dropdown-divider"></div>
+          <a class="site-nav-dropdown-item" href="disclaimer.html">
+            <span class="site-nav-dropdown-num">&#x2197;</span>
+            <span class="site-nav-dropdown-label">Data Sources &amp; Methodology</span>
+          </a>
+        </div>
+      </div>
+      <a class="site-nav-link" href="#">Blog</a>
+      <a class="site-nav-link" href="#">Contact</a>
+    </div>
+
+    <div class="header-right">
+      <div class="currency-pills">
+        <button class="currency-pill active" onclick="setCurrency('both',this)">NZD + AUD</button>
+        <button class="currency-pill"        onclick="setCurrency('nzd',this)">NZD</button>
+        <button class="currency-pill"        onclick="setCurrency('aud',this)">AUD</button>
+      </div>
+    </div>
+  </header>
+
+<section class="hero">
+        <div>
+          <div class="hero-eyebrow">Report 03 · Market Research</div>
+          <h1 class="hero-title">
+            Google &amp; Meta Ads<br /><strong>Benchmarks</strong>
+          </h1>
+          <p class="hero-sub">
+            Paid advertising costs and performance benchmarks across Google Ads
+            and Meta Ads for New Zealand and Australian markets — CPC, CPM,
+            conversion rates, and management fees by industry.
+          </p>
+        </div>
+        <div class="hero-meta">
+          Paid Ads Intelligence<br />NZ × AU · 2025–2026<br /><br />Ad spend
+          billed directly to platform<br />Excl. GST
+        </div>
+      </section>
+
+      <nav class="tab-nav">
+        <button class="tab-btn active" onclick="showTab('a', 'google', this)">
+          Google Ads
+        </button>
+        <button class="tab-btn" onclick="showTab('a', 'meta', this)">
+          Meta Ads
+        </button>
+        <button class="tab-btn" onclick="showTab('a', 'management', this)">
+          Management fees
+        </button>
+        <button class="tab-btn" onclick="showTab('a', 'budgets', this)">
+          Budget planning
+        </button>
+      </nav>
+
+      <main class="content">
+        <div id="a-google" class="panel active">
+          <div class="section-label">NZ &amp; AU market averages — 2026</div>
+          <div class="metric-row">
+            <div class="metric-card">
+              <div class="metric-label">NZ avg CPC</div>
+              <div class="metric-value" style="color: var(--mauve)">$3.24</div>
+              <div class="metric-sub">NZD · search campaigns</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">AU avg CPC</div>
+              <div class="metric-value" style="color: var(--olive)">$4.12</div>
+              <div class="metric-sub">AUD · search campaigns</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">NZ avg CTR</div>
+              <div class="metric-value" style="color: var(--ink)">9.1%</div>
+              <div class="metric-sub">vs global avg 6.7%</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Global avg CPC (2026)</div>
+              <div class="metric-value" style="color: var(--ink-light)">
+                $5.42
+              </div>
+              <div class="metric-sub">USD · up 3% from 2025</div>
+            </div>
+          </div>
+          <div class="section-label">CPC by industry — NZ &amp; AU search</div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Industry</th>
+                <th style="color: #8e6b7e">NZD CPC (est.)</th>
+                <th style="color: #6b7a45">AUD CPC (est.)</th>
+                <th style="color: var(--ink-faint)">Global USD CPC</th>
+                <th>Conversion rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div>Legal &amp; professional services</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 100%;
+                        background: linear-gradient(90deg, #8e6b7e, #2c2820);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m">$14–$18</td>
+                <td class="val-o">$15–$20</td>
+                <td class="val-g">$9.87</td>
+                <td style="color: var(--ink-light)">4–6%</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Dentists &amp; dental services</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 78%;
+                        background: linear-gradient(90deg, #8e6b7e, #6b7a45);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m">$9–$14</td>
+                <td class="val-o">$10–$16</td>
+                <td class="val-g">$8.00</td>
+                <td style="color: var(--ink-light)">5–8%</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Home services (trades, electrical, plumbing)</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 72%;
+                        background: linear-gradient(90deg, #8e6b7e, #6b7a45);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m">$8–$16</td>
+                <td class="val-o">$9–$18</td>
+                <td class="val-g">$8.33</td>
+                <td style="color: var(--ink-light)">7–10%</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Finance &amp; insurance</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 68%;
+                        background: linear-gradient(90deg, #8e6b7e, #6b7a45);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m">$7–$12</td>
+                <td class="val-o">$8–$14</td>
+                <td class="val-g">$6.75</td>
+                <td style="color: var(--ink-light)">3–5%</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Healthcare &amp; medical</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 52%;
+                        background: linear-gradient(90deg, #b89aaa, #8e6b7e);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m">$5–$9</td>
+                <td class="val-o">$6–$10</td>
+                <td class="val-g">~$5.00</td>
+                <td style="color: var(--ink-light)">5–7%</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>B2B / SaaS</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 46%;
+                        background: linear-gradient(90deg, #b89aaa, #8e6b7e);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m">$4–$8</td>
+                <td class="val-o">$5–$10</td>
+                <td class="val-g">~$5.00</td>
+                <td style="color: var(--ink-light)">3–5%</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Hospitality &amp; tourism</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 26%;
+                        background: linear-gradient(90deg, #8a9a5b, #6b7a45);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m">$2–$5</td>
+                <td class="val-o">$2–$6</td>
+                <td class="val-g">$1.50–$2.50</td>
+                <td style="color: var(--ink-light)">3–5%</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Retail &amp; eCommerce</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 20%;
+                        background: linear-gradient(90deg, #8a9a5b, #6b7a45);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-m">$1.50–$4</td>
+                <td class="val-o">$2–$5</td>
+                <td class="val-g">$1.16–$3.50</td>
+                <td style="color: var(--ink-light)">2–4%</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="note m">
+            <strong>NZ context:</strong> New Zealand CPCs run approximately 14%
+            below the US average and slightly below Australian rates —
+            reflecting a smaller, less competitive market. NZ search CTR (9.1%)
+            significantly outperforms the global average of 6.7%, suggesting
+            strong intent alignment when ads are targeted well.
+          </div>
+        </div>
+
+        <div id="a-meta" class="panel">
+          <div class="section-label">Meta Ads — platform averages 2026</div>
+          <div class="metric-row">
+            <div class="metric-card">
+              <div class="metric-label">AU avg CPC</div>
+              <div class="metric-value" style="color: var(--olive)">$1.47</div>
+              <div class="metric-sub">AUD · all placements · up 12% YoY</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">AU avg CPM</div>
+              <div class="metric-value" style="color: var(--olive)">$11.04</div>
+              <div class="metric-sub">AUD · per 1,000 impressions</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Global avg CPC</div>
+              <div class="metric-value" style="color: var(--ink-light)">
+                $1.72
+              </div>
+              <div class="metric-sub">USD · Facebook · up 11% from 2025</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Global avg ROAS</div>
+              <div class="metric-value" style="color: var(--ink)">2.79×</div>
+              <div class="metric-sub">Median across all industries</div>
+            </div>
+          </div>
+          <div class="section-label">
+            CPM by industry — Meta (Facebook + Instagram)
+          </div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Industry</th>
+                <th style="color: #6b7a45">CPM (AUD est.)</th>
+                <th style="color: var(--ink-faint)">Global CPM (USD)</th>
+                <th>Avg CVR</th>
+                <th>CPC (est. AUD)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div>Finance &amp; insurance</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 100%;
+                        background: linear-gradient(90deg, #8e6b7e, #2c2820);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-o">$18–$24</td>
+                <td class="val-g">$12–$18</td>
+                <td style="color: var(--ink-light)">1.5–3%</td>
+                <td class="val-o">$3.50–$6</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Health &amp; wellness / beauty</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 82%;
+                        background: linear-gradient(90deg, #8e6b7e, #6b7a45);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-o">$16–$22</td>
+                <td class="val-g">$12.46</td>
+                <td style="color: var(--ink-light)">1.5–2.5%</td>
+                <td class="val-o">$1.80–$3.50</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Legal services</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 75%;
+                        background: linear-gradient(90deg, #8e6b7e, #6b7a45);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-o">$14–$20</td>
+                <td class="val-g">$10–$15</td>
+                <td style="color: var(--ink-light)">1–2%</td>
+                <td class="val-o">$3–$6</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Retail &amp; eCommerce</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 56%;
+                        background: linear-gradient(90deg, #b89aaa, #8e6b7e);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-o">$10–$16</td>
+                <td class="val-g">$13.48</td>
+                <td style="color: var(--ink-light)">1.5–2%</td>
+                <td class="val-o">$1.20–$2.50</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Hospitality, food &amp; beverage</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 44%;
+                        background: linear-gradient(90deg, #8a9a5b, #6b7a45);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-o">$8–$13</td>
+                <td class="val-g">$7–$11</td>
+                <td style="color: var(--ink-light)">2–3%</td>
+                <td class="val-o">$0.80–$1.50</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Home services &amp; trades</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 40%;
+                        background: linear-gradient(90deg, #8a9a5b, #6b7a45);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-o">$8–$12</td>
+                <td class="val-g">$7–$10</td>
+                <td style="color: var(--ink-light)">2–3.5%</td>
+                <td class="val-o">$0.90–$1.80</td>
+              </tr>
+              <tr>
+                <td>
+                  <div>Automotive &amp; hardware</div>
+                  <div class="bar-wrap">
+                    <div
+                      class="bar"
+                      style="
+                        width: 32%;
+                        background: linear-gradient(90deg, #8a9a5b, #6b7a45);
+                      "
+                    ></div>
+                  </div>
+                </td>
+                <td class="val-o">$7–$11</td>
+                <td class="val-g">$6.96</td>
+                <td style="color: var(--ink-light)">1–2%</td>
+                <td class="val-o">$0.90–$1.60</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="section-label section-gap">
+            Placement CPM comparison — AU market (AUD est.)
+          </div>
+          <div class="placement-grid">
+            <div class="placement-card">
+              <div class="placement-label">Instagram Feed</div>
+              <div class="placement-val" style="color: var(--mauve)">
+                $18–$26
+              </div>
+              <div class="placement-sub">
+                Premium placement · highest engagement rate
+              </div>
+            </div>
+            <div class="placement-card">
+              <div class="placement-label">Facebook Feed</div>
+              <div class="placement-val" style="color: var(--mauve)">
+                $12–$18
+              </div>
+              <div class="placement-sub">
+                Standard reach · broad audience access
+              </div>
+            </div>
+            <div class="placement-card">
+              <div class="placement-label">Reels</div>
+              <div class="placement-val" style="color: var(--olive)">
+                $8–$13
+              </div>
+              <div class="placement-sub">
+                45% cheaper than IG Feed · strong for brand awareness
+              </div>
+            </div>
+            <div class="placement-card">
+              <div class="placement-label">Stories</div>
+              <div class="placement-val" style="color: var(--olive)">
+                $8–$14
+              </div>
+              <div class="placement-sub">
+                Full-screen · swipe-up direct response
+              </div>
+            </div>
+            <div class="placement-card">
+              <div class="placement-label">Audience Network</div>
+              <div class="placement-val" style="color: var(--ink-light)">
+                $4–$8
+              </div>
+              <div class="placement-sub">Lowest CPM · variable quality</div>
+            </div>
+          </div>
+          <div class="note">
+            <strong>Key insight:</strong> Reels deliver the highest
+            reach-per-dollar on Meta in 2026. For NZ and AU brand awareness
+            campaigns, Reels CPM is approximately 45% lower than Instagram Feed.
+            Advantage+ campaigns reduce CPA by approximately 32% compared to
+            manually configured campaigns.
+          </div>
+        </div>
+
+        <div id="a-management" class="panel">
+          <div class="section-label">
+            Google Ads management fees — NZ &amp; AU 2026
+          </div>
+          <div class="row-item">
+            <div>
+              <div class="row-title">Freelancer / solo consultant</div>
+              <div class="row-sub">
+                NZ: $75–$150/hr · AU: $60–$150/hr · monthly retainer $800–$2,500
+              </div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #8e6b7e">NZD / mo</div>
+              <div class="row-amount" style="color: #8e6b7e">$800–$2,500</div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #6b7a45">AUD / mo</div>
+              <div class="row-amount" style="color: #6b7a45">$800–$2,500</div>
+            </div>
+          </div>
+          <div class="row-item">
+            <div>
+              <div class="row-title">Boutique agency</div>
+              <div class="row-sub">1–2 platforms · fixed monthly retainer</div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #8e6b7e">NZD / mo</div>
+              <div class="row-amount" style="color: #8e6b7e">$1,000–$2,500</div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #6b7a45">AUD / mo</div>
+              <div class="row-amount" style="color: #6b7a45">$1,000–$2,000</div>
+            </div>
+          </div>
+          <div class="row-item">
+            <div>
+              <div class="row-title">Mid-sized agency</div>
+              <div class="row-sub">
+                Multi-platform · reporting · strategy included
+              </div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #8e6b7e">NZD / mo</div>
+              <div class="row-amount" style="color: #8e6b7e">$2,000–$4,000</div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #6b7a45">AUD / mo</div>
+              <div class="row-amount" style="color: #6b7a45">$1,500–$3,000</div>
+            </div>
+          </div>
+          <div class="row-item">
+            <div>
+              <div class="row-title">Large agency</div>
+              <div class="row-sub">
+                Full-service, multi-channel, dedicated team
+              </div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #8e6b7e">NZD / mo</div>
+              <div class="row-amount" style="color: #8e6b7e">
+                $4,000–$10,000+
+              </div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #6b7a45">AUD / mo</div>
+              <div class="row-amount" style="color: #6b7a45">
+                $3,000–$10,000+
+              </div>
+            </div>
+          </div>
+          <div class="row-item">
+            <div>
+              <div class="row-title">Percentage of ad spend model</div>
+              <div class="row-sub">
+                Common at larger agencies — creates incentive to increase your
+                budget
+              </div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: var(--ink-faint)">
+                Fee structure
+              </div>
+              <div
+                class="row-amount"
+                style="color: var(--ink-light); font-size: 14px"
+              >
+                10–20% of spend
+              </div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: var(--ink-faint)">
+                Setup fee
+              </div>
+              <div
+                class="row-amount"
+                style="color: var(--ink-light); font-size: 14px"
+              >
+                $750–$2,000
+              </div>
+            </div>
+          </div>
+          <div class="note m" style="margin-top: 24px">
+            <strong>Note:</strong> The percentage-of-spend model creates a
+            direct financial incentive to increase your ad budget. For most
+            small NZ and AU businesses, a flat monthly retainer from a boutique
+            agency or experienced freelancer ($800–$2,500) delivers better
+            alignment and predictable costs.
+          </div>
+          <div class="section-label section-gap">
+            Meta Ads management fees — NZ &amp; AU 2026
+          </div>
+          <div class="row-item">
+            <div>
+              <div class="row-title">Freelancer — social ads specialist</div>
+              <div class="row-sub">
+                Campaign setup + monthly management + basic reporting
+              </div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #8e6b7e">NZD / mo</div>
+              <div class="row-amount" style="color: #8e6b7e">$600–$1,800</div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #6b7a45">AUD / mo</div>
+              <div class="row-amount" style="color: #6b7a45">$600–$2,000</div>
+            </div>
+          </div>
+          <div class="row-item">
+            <div>
+              <div class="row-title">Agency — Meta + Google combined</div>
+              <div class="row-sub">
+                Both platforms · creative direction · reporting dashboard
+              </div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #8e6b7e">NZD / mo</div>
+              <div class="row-amount" style="color: #8e6b7e">$2,000–$5,000</div>
+            </div>
+            <div class="row-price-block">
+              <div class="row-currency" style="color: #6b7a45">AUD / mo</div>
+              <div class="row-amount" style="color: #6b7a45">$1,500–$5,000</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="a-budgets" class="panel">
+          <div class="section-label">
+            Recommended minimum ad spend — NZ &amp; AU
+          </div>
+          <div class="dark-block">
+            <div class="dark-label">
+              Google Ads — monthly ad spend (excl. management fee)
+            </div>
+            <div class="dark-grid">
+              <div class="dark-card">
+                <div class="dark-card-label">Testing / starting out</div>
+                <div class="dark-card-val" style="color: var(--mauve-l)">
+                  $500–$1,000
+                </div>
+                <div class="dark-card-sub">
+                  Enough to gather data. Expect limited reach. Not sufficient
+                  for meaningful conversions in high-CPC industries.
+                </div>
+              </div>
+              <div class="dark-card">
+                <div class="dark-card-label">Recommended minimum</div>
+                <div class="dark-card-val" style="color: var(--olive-l)">
+                  $1,500–$3,000
+                </div>
+                <div class="dark-card-sub">
+                  Most agencies won't take Google Ads clients below this. Enough
+                  for meaningful volume in most NZ and AU markets.
+                </div>
+              </div>
+              <div class="dark-card">
+                <div class="dark-card-label">Competitive / growth</div>
+                <div
+                  class="dark-card-val"
+                  style="color: rgba(255, 255, 255, 0.75)"
+                >
+                  $3,000–$10,000+
+                </div>
+                <div class="dark-card-sub">
+                  Required in legal, dental, home services, finance. Campaigns
+                  reach peak performance at 8–12 weeks of sustained spend.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dark-block">
+            <div class="dark-label">
+              Meta Ads — monthly ad spend (excl. management fee)
+            </div>
+            <div class="dark-grid">
+              <div class="dark-card">
+                <div class="dark-card-label">Brand awareness / testing</div>
+                <div class="dark-card-val" style="color: var(--mauve-l)">
+                  $300–$800
+                </div>
+                <div class="dark-card-sub">
+                  Viable on Meta at lower budgets than Google, especially for
+                  local awareness. Pixel needs time to learn.
+                </div>
+              </div>
+              <div class="dark-card">
+                <div class="dark-card-label">Leads &amp; conversions</div>
+                <div class="dark-card-val" style="color: var(--olive-l)">
+                  $1,000–$2,500
+                </div>
+                <div class="dark-card-sub">
+                  Enough for Advantage+ to optimise effectively. Retargeting
+                  campaigns viable from $500/mo alongside prospecting.
+                </div>
+              </div>
+              <div class="dark-card">
+                <div class="dark-card-label">eCommerce / scaling</div>
+                <div
+                  class="dark-card-val"
+                  style="color: rgba(255, 255, 255, 0.75)"
+                >
+                  $2,500–$8,000+
+                </div>
+                <div class="dark-card-sub">
+                  Required for full-funnel Meta strategy: prospecting,
+                  retargeting, and retention running simultaneously.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-label">
+            Total monthly budget — what to expect all-in
+          </div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Scenario</th>
+                <th>Platform</th>
+                <th style="color: #8e6b7e">Ad spend (NZD / mo)</th>
+                <th style="color: var(--ink-faint)">Mgmt fee (est.)</th>
+                <th>Total / mo (est.)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Local service business — starting</td>
+                <td style="color: var(--ink-faint)">Google</td>
+                <td class="val-m">$1,500</td>
+                <td style="color: var(--ink-faint)">$800–$1,200</td>
+                <td style="font-weight: 500">$2,300–$2,700</td>
+              </tr>
+              <tr>
+                <td>eCommerce — brand awareness</td>
+                <td style="color: var(--ink-faint)">Meta</td>
+                <td class="val-m">$1,000</td>
+                <td style="color: var(--ink-faint)">$600–$1,200</td>
+                <td style="font-weight: 500">$1,600–$2,200</td>
+              </tr>
+              <tr>
+                <td>Trades / home services</td>
+                <td style="color: var(--ink-faint)">Google</td>
+                <td class="val-m">$2,500–$4,000</td>
+                <td style="color: var(--ink-faint)">$1,000–$2,000</td>
+                <td style="font-weight: 500">$3,500–$6,000</td>
+              </tr>
+              <tr>
+                <td>Small business — dual platform</td>
+                <td style="color: var(--ink-faint)">Google + Meta</td>
+                <td class="val-m">$2,000–$4,000</td>
+                <td style="color: var(--ink-faint)">$1,500–$3,000</td>
+                <td style="font-weight: 500">$3,500–$7,000</td>
+              </tr>
+              <tr>
+                <td>Legal / dental / professional</td>
+                <td style="color: var(--ink-faint)">Google</td>
+                <td class="val-m">$4,000–$8,000</td>
+                <td style="color: var(--ink-faint)">$1,500–$3,000</td>
+                <td style="font-weight: 500">$5,500–$11,000</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="note">
+            <strong>Key insight:</strong> Ad spend is always billed directly to
+            the platform — never to your agency. If an agency is invoicing you
+            for ad spend rather than passing it through, this is a significant
+            red flag. Always request direct billing access to your Google Ads
+            and Meta Ads accounts.
+          </div>
+        </div>
+      </main>
+      
+    </div>
+
+    <!-- ════════════════════════════════════════════
+     PAGE: DISCLAIMER
+════════════════════════════════════════════ -->
+
+    <!-- ══ FOOTER ════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-copy">&copy; 2026 Wisen</div>
+    <nav class="footer-nav">
+      <a class="footer-nav-link" href="../index.html#reports">Reports</a>
+      <a class="footer-nav-link" href="#">Blog</a>
+      <a class="footer-nav-link" href="#">Contact</a>
+      <a class="footer-nav-link" href="disclaimer.html">Data &amp; Disclaimer</a>
+    </nav>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
