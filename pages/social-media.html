@@ -94,7 +94,7 @@
           <div class="pkg-grid">
             <div class="pkg-card">
               <div class="pkg-accent" style="background: #b89aaa"></div>
-              <div class="pkg-tier">Starter</div>
+              <div class="pkg-tier">Basic presence</div>
               <div class="nzd-block">
                 <div class="pkg-price-label" style="color: #8e6b7e">
                   NZD / month
@@ -128,7 +128,7 @@
             </div>
             <div class="pkg-card">
               <div class="pkg-accent" style="background: #8e6b7e"></div>
-              <div class="pkg-tier">Growth</div>
+              <div class="pkg-tier">Regular content</div>
               <div class="nzd-block">
                 <div class="pkg-price-label" style="color: #8e6b7e">
                   NZD / month
@@ -162,7 +162,7 @@
             </div>
             <div class="pkg-card">
               <div class="pkg-accent" style="background: #6b7a45"></div>
-              <div class="pkg-tier">Professional</div>
+              <div class="pkg-tier">Active management</div>
               <div class="nzd-block">
                 <div class="pkg-price-label" style="color: #8e6b7e">
                   NZD / month
@@ -196,7 +196,7 @@
             </div>
             <div class="pkg-card">
               <div class="pkg-accent" style="background: #2c2820"></div>
-              <div class="pkg-tier">Enterprise</div>
+              <div class="pkg-tier">Full service</div>
               <div class="nzd-block">
                 <div class="pkg-price-label" style="color: #8e6b7e">
                   NZD / month
@@ -799,10 +799,10 @@
 
       // Tier label
       let tier = '';
-      if (nzdHigh <= 1500) tier = 'This scope sits within the Starter range — basic presence on one platform.';
-      else if (nzdHigh <= 3000) tier = 'This scope sits within the Growth range — regular content across two platforms.';
-      else if (nzdHigh <= 6000) tier = 'This scope sits within the Professional range — active management with video included.';
-      else tier = 'This scope sits within the Enterprise range — full-service, multi-platform management.';
+      if (nzdHigh <= 1500) tier = 'This scope sits within the Basic presence range — one platform, static posts only.';
+      else if (nzdHigh <= 3000) tier = 'This scope sits within the Regular content range — consistent posting across two platforms.';
+      else if (nzdHigh <= 6000) tier = 'This scope sits within the Active management range — video included, community managed.';
+      else tier = 'This scope sits within the Full service range — multi-platform, everything managed.';
       document.getElementById('calc-tier').textContent = tier;
     }
 
