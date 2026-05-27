@@ -78,9 +78,6 @@
         <button class="tab-btn" onclick="showTab('s', 'hourly', this)">
           Hourly rates
         </button>
-        <button class="tab-btn" onclick="showTab('s', 'calculator', this)" style="margin-left:auto;">
-          Budget calculator
-        </button>
       </nav>
 
       <main class="content">
@@ -389,106 +386,6 @@
           </div>
         </div>
 
-        <div id="s-calculator" class="panel">
-          <p style="font-size:13px; color:var(--ink-light); font-weight:300; line-height:1.8; max-width:680px; margin-bottom:36px;">
-            Tell us what you need and we will show you what it typically costs in the NZ and AU market. Figures are indicative ranges based on 2025–2026 research — your actual quote will depend on your provider and scope.
-          </p>
-
-          <!-- INPUTS -->
-          <div style="max-width:680px;">
-
-            <div style="margin-bottom:24px;">
-              <div style="font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--mauve); font-weight:500; margin-bottom:10px;">How many platforms?</div>
-              <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                <button class="calc-btn active" onclick="setCalc('platforms',1,this)">1 platform</button>
-                <button class="calc-btn" onclick="setCalc('platforms',2,this)">2 platforms</button>
-                <button class="calc-btn" onclick="setCalc('platforms',3,this)">3 or more</button>
-              </div>
-            </div>
-
-            <div style="margin-bottom:24px;">
-              <div style="font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--mauve); font-weight:500; margin-bottom:10px;">Posts per week</div>
-              <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                <button class="calc-btn active" onclick="setCalc('posts',1,this)">1–2</button>
-                <button class="calc-btn" onclick="setCalc('posts',3,this)">3–4</button>
-                <button class="calc-btn" onclick="setCalc('posts',5,this)">5 or more</button>
-              </div>
-            </div>
-
-            <div style="margin-bottom:24px;">
-              <div style="font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--mauve); font-weight:500; margin-bottom:10px;">Video / <span class="gt" onclick="openGloss('reels')">reels</span> per month</div>
-              <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                <button class="calc-btn active" onclick="setCalc('video',0,this)">None</button>
-                <button class="calc-btn" onclick="setCalc('video',1,this)">1–2</button>
-                <button class="calc-btn" onclick="setCalc('video',4,this)">3–5</button>
-                <button class="calc-btn" onclick="setCalc('video',6,this)">5 or more</button>
-              </div>
-            </div>
-
-            <div style="margin-bottom:24px;">
-              <div style="font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--mauve); font-weight:500; margin-bottom:10px;"><span class="gt" onclick="openGloss('content-strategy')">Content strategy</span> included?</div>
-              <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                <button class="calc-btn active" onclick="setCalc('strategy',false,this)">No</button>
-                <button class="calc-btn" onclick="setCalc('strategy',true,this)">Yes</button>
-              </div>
-            </div>
-
-            <div style="margin-bottom:24px;">
-              <div style="font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--mauve); font-weight:500; margin-bottom:10px;"><span class="gt" onclick="openGloss('community-management')">Community management</span>?</div>
-              <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                <button class="calc-btn active" onclick="setCalc('community',false,this)">No</button>
-                <button class="calc-btn" onclick="setCalc('community',true,this)">Yes</button>
-              </div>
-            </div>
-
-            <div style="margin-bottom:36px;">
-              <div style="font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--mauve); font-weight:500; margin-bottom:10px;"><span class="gt" onclick="openGloss('paid-ad-management')">Paid ad management</span>?</div>
-              <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                <button class="calc-btn active" onclick="setCalc('paidads',false,this)">No</button>
-                <button class="calc-btn" onclick="setCalc('paidads',true,this)">Yes</button>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- RESULT — dark block matching hourly estimator style -->
-          <div class="dark-block" style="max-width:680px;">
-            <div class="dark-label">Estimated monthly budget — NZ &amp; AU market rates · 2025–2026</div>
-            <div class="dark-grid">
-              <div class="dark-card">
-                <div class="dark-card-label">NZD / month</div>
-                <div id="calc-nzd" class="dark-card-val" style="color:var(--mauve-l); font-size:24px;">$500–$1,500</div>
-              </div>
-              <div class="dark-card">
-                <div class="dark-card-label">AUD / month</div>
-                <div id="calc-aud" class="dark-card-val" style="color:var(--olive-l); font-size:24px;">$800–$1,500</div>
-              </div>
-              <div class="dark-card">
-                <div class="dark-card-label">Market level</div>
-                <div id="calc-tier" class="dark-card-sub" style="color:rgba(255,255,255,0.6); font-size:11px; line-height:1.6;"></div>
-              </div>
-            </div>
-            <div style="margin-top:20px; font-size:10px; color:rgba(255,255,255,0.3); font-weight:300; line-height:1.6;"><span class="gt" onclick="openGloss('ad-spend')" style="color:rgba(255,255,255,0.4); border-bottom-color:rgba(255,255,255,0.3);">Ad spend</span> is not included — that is paid directly to the platform on top of any management fee.</div>
-          </div>
-
-          <style>
-            .calc-btn {
-              font-family: 'Poppins', sans-serif;
-              font-size: 11px;
-              font-weight: 500;
-              padding: 8px 16px;
-              border: 1px solid var(--rule);
-              border-radius: 6px;
-              background: var(--parchment);
-              color: var(--ink-faint);
-              cursor: pointer;
-              transition: all 0.15s;
-            }
-            .calc-btn:hover { background: var(--linen); color: var(--ink); }
-            .calc-btn.active { background: var(--ink); color: var(--parchment); border-color: var(--ink); }
-          </style>
-
-        </div>
 
         <div id="s-hourly" class="panel">
           <div class="section-label">Hourly rate benchmarks</div>
@@ -731,69 +628,6 @@
 
   <script src="../js/main.js"></script>
   <script>
-    // ── CALCULATOR ──
-    const calcState = { platforms: 1, posts: 1, video: 0, strategy: false, community: false, paidads: false };
-
-    function setCalc(key, val, btn) {
-      calcState[key] = val;
-      btn.closest('div').querySelectorAll('.calc-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      updateCalc();
-    }
-
-    function updateCalc() {
-      const { platforms, posts, video, strategy, community, paidads } = calcState;
-
-      // Base: per platform × post frequency
-      let nzdLow = 300, nzdHigh = 800;
-      let audLow = 400, audHigh = 900;
-
-      // Platforms multiplier
-      const platMult = platforms === 1 ? 1 : platforms === 2 ? 1.6 : 2.1;
-      nzdLow *= platMult; nzdHigh *= platMult;
-      audLow *= platMult; audHigh *= platMult;
-
-      // Posts per week
-      const postMult = posts === 1 ? 1 : posts === 3 ? 1.5 : 2.2;
-      nzdLow *= postMult; nzdHigh *= postMult;
-      audLow *= postMult; audHigh *= postMult;
-
-      // Video
-      if (video === 1) { nzdLow += 380; nzdHigh += 800; audLow += 500; audHigh += 1200; }
-      else if (video === 4) { nzdLow += 1200; nzdHigh += 3200; audLow += 1500; audHigh += 4000; }
-      else if (video === 6) { nzdLow += 2500; nzdHigh += 6000; audLow += 3000; audHigh += 7500; }
-
-      // Strategy
-      if (strategy) { nzdLow += 300; nzdHigh += 600; audLow += 350; audHigh += 700; }
-
-      // Community management
-      if (community) { nzdLow += 400; nzdHigh += 800; audLow += 500; audHigh += 1000; }
-
-      // Paid ad management
-      if (paidads) { nzdLow += 800; nzdHigh += 2000; audLow += 1000; audHigh += 2500; }
-
-      // Round to nearest 50
-      const r = n => Math.round(n / 50) * 50;
-      nzdLow = r(nzdLow); nzdHigh = r(nzdHigh);
-      audLow = r(audLow); audHigh = r(audHigh);
-
-      // Format
-      const fmt = n => '$' + n.toLocaleString();
-      document.getElementById('calc-nzd').textContent = fmt(nzdLow) + '–' + fmt(nzdHigh);
-      document.getElementById('calc-aud').textContent = fmt(audLow) + '–' + fmt(audHigh);
-
-      // Tier label
-      let tier = '';
-      if (nzdHigh <= 1500) tier = 'This scope sits within the Basic presence range — one platform, static posts only.';
-      else if (nzdHigh <= 3000) tier = 'This scope sits within the Regular content range — consistent posting across two platforms.';
-      else if (nzdHigh <= 6000) tier = 'This scope sits within the Active management range — video included, community managed.';
-      else tier = 'This scope sits within the Full service range — multi-platform, everything managed.';
-      document.getElementById('calc-tier').textContent = tier;
-    }
-
-    // Initialise
-    updateCalc();
-
     const glossary = {
       'static-posts': {
         term: 'Static posts',
