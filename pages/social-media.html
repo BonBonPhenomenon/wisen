@@ -232,7 +232,7 @@
         </div>
 
         <div id="s-content" class="panel">
-          <div class="section-label">Per-post costs — <span class="gt" onclick="openGloss('static-posts')">static</span></div>
+          <div class="section-label">Per-post costs — static</div>
           <table class="data-table">
             <thead>
               <tr>
@@ -305,7 +305,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="section-label section-gap">Per-post costs — video / <span class="gt" onclick="openGloss('reels')">reels</span></div>
+          <div class="section-label section-gap">Per-post costs — video / reels</div>
           <table class="data-table">
             <thead>
               <tr>
@@ -624,6 +624,7 @@
       transition: color 0.15s, border-color 0.15s;
     }
     .gt:hover { color: var(--ink); border-bottom-color: var(--ink); }
+    .section-label::after { display: none; }
   </style>
 
   <script src="../js/main.js"></script>
