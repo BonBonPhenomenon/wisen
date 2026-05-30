@@ -122,78 +122,6 @@
       line-height: 1.7;
     }
 
-    .report-source-block {
-      margin-bottom: 36px;
-      border: 1px solid var(--rule);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .report-source-header {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: 16px;
-      padding: 20px 24px;
-      background: var(--linen);
-      border-bottom: 1px solid var(--rule);
-      align-items: center;
-    }
-    .report-source-num {
-      font-family: 'Lora', serif;
-      font-size: 22px;
-      font-weight: 400;
-      color: var(--mauve-l);
-      line-height: 1;
-    }
-    .report-source-title {
-      font-family: 'Lora', serif;
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--ink);
-    }
-    .report-source-period {
-      font-size: 10px;
-      color: var(--ink-faint);
-      font-weight: 300;
-      letter-spacing: 0.04em;
-      text-align: right;
-      white-space: nowrap;
-    }
-    .report-source-rows {
-      padding: 0 24px;
-    }
-    .report-source-row {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 16px;
-      padding: 13px 0;
-      border-bottom: 1px solid var(--linen-dark);
-      font-size: 12px;
-    }
-    .report-source-row:last-child { border-bottom: none; }
-    .report-source-cat {
-      color: var(--ink-faint);
-      font-weight: 500;
-      letter-spacing: 0.03em;
-      padding-top: 1px;
-    }
-    .report-source-detail {
-      color: var(--ink-light);
-      font-weight: 300;
-      line-height: 1.7;
-    }
-    .report-source-detail a {
-      color: var(--mauve);
-      text-decoration: none;
-    }
-    .report-source-detail a:hover { text-decoration: underline; }
-    .report-source-gap {
-      font-size: 11px;
-      color: var(--ink-faint);
-      font-weight: 300;
-      font-style: italic;
-      line-height: 1.6;
-    }
-
     .nz-gap-note {
       background: var(--mauve-pale);
       border-left: 3px solid var(--mauve);
@@ -235,10 +163,6 @@
     @media (max-width: 900px) {
       .method-hero, .method-body { padding-left: 20px; padding-right: 20px; }
       .confidence-grid { grid-template-columns: 1fr; }
-      .report-source-header { grid-template-columns: auto 1fr; }
-      .report-source-period { display: none; }
-      .report-source-row { grid-template-columns: 1fr; gap: 4px; }
-      .report-source-cat { font-size: 10px; color: var(--mauve-l); }
     }
   </style>
 </head>
@@ -403,100 +327,6 @@
       </p>
     </div>
 
-    <!-- SOURCES BY REPORT -->
-    <div class="method-section">
-      <div class="section-label" style="margin-bottom:20px">Sources by report</div>
-      <h3>What each report draws on</h3>
-      <p>Each report lists its own primary sources below. Research periods are noted per report -- figures from different reports were researched at different times.</p>
-
-      <!-- REPORT 01 -->
-      <div class="report-source-block">
-        <div class="report-source-header">
-          <div class="report-source-num">01</div>
-          <div class="report-source-title">Social Media Agency Pricing</div>
-          <div class="report-source-period">Research period noted in report</div>
-        </div>
-        <div class="report-source-rows">
-          <div class="report-source-row">
-            <div class="report-source-cat">NZ agencies</div>
-            <div class="report-source-detail">Designated Marketing NZ · Wild Sea Creative NZ · Vanguard 86 NZ · Kingfisher Digital NZ · Back9 Creative NZ · PMGS Digital NZ</div>
-          </div>
-          <div class="report-source-row">
-            <div class="report-source-cat">AU agencies</div>
-            <div class="report-source-detail">SOUP Agency AU · Catalyst Communications AU · BeKonstructive Marketing AU · StrategyByte AU · Studio Slate AU</div>
-          </div>
-          <div class="report-source-row">
-            <div class="report-source-cat">Benchmarks</div>
-            <div class="report-source-detail">Sprout Social AU 2026 Social Media Statistics · Rocking Web AU Meta Ads Australia Benchmarks 2026</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- REPORT 02 -->
-      <div class="report-source-block">
-        <div class="report-source-header">
-          <div class="report-source-num">02</div>
-          <div class="report-source-title">Website Build &amp; Maintenance Costs</div>
-          <div class="report-source-period">Research period noted in report</div>
-        </div>
-        <div class="report-source-rows">
-          <div class="report-source-row">
-            <div class="report-source-cat">NZ agencies</div>
-            <div class="report-source-detail">Alpine Studio NZ · Fuel Design NZ · HornTech NZ · Lucid Media NZ · Websonic NZ · Kiwi Web Design NZ · King Tide Marketing NZ · Digital Presence NZ · MyTechGuy NZ</div>
-          </div>
-          <div class="report-source-row">
-            <div class="report-source-cat">AU agencies</div>
-            <div class="report-source-detail">Workspacein AU · Precision Digital AU · Websites That Sell AU · Visual Web AU · Small Biz Web Design AU · Rocking Web AU · VT Digital AU</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- REPORT 03 — SEO SERVICES -->
-      <div class="report-source-block">
-        <div class="report-source-header">
-          <div class="report-source-num">03</div>
-          <div class="report-source-title">SEO Services Pricing</div>
-          <div class="report-source-period">Research period noted in report</div>
-        </div>
-        <div class="report-source-rows">
-          <div class="report-source-row">
-            <div class="report-source-cat">Sources</div>
-            <div class="report-source-detail report-source-gap">Source list to be added when report is finalised for launch.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- REPORT 04 — PAID ADS (post-launch) -->
-      <div class="report-source-block">
-        <div class="report-source-header">
-          <div class="report-source-num">04</div>
-          <div class="report-source-title">Paid Ads Benchmarks</div>
-          <div class="report-source-period">Post-launch · sources listed on publication</div>
-        </div>
-        <div class="report-source-rows">
-          <div class="report-source-row">
-            <div class="report-source-cat">NZ benchmarks</div>
-            <div class="report-source-detail">Web Antler NZ Google Ads Benchmarks 2026 (April 2026) · IAB New Zealand CY2025 Advertising Revenue Report · IDNZ Digital Marketing Report 2026</div>
-          </div>
-          <div class="report-source-row">
-            <div class="report-source-cat">AU benchmarks</div>
-            <div class="report-source-detail">IAB Australia Internet Advertising Revenue Report (PwC, March 2026) · Rocking Web AU Meta Ads Benchmarks 2026 (8,400+ AU ad accounts) · Grove Foundry AU · Ape-X AU · ROI.com.au</div>
-          </div>
-          <div class="report-source-row">
-            <div class="report-source-cat">Global context</div>
-            <div class="report-source-detail">ALM Corp Google Ads Benchmarks 2026 · Lebesgue AI Facebook CPM by Country 2026 · Triple Whale Facebook Ad Benchmarks 2025</div>
-          </div>
-          <div class="report-source-row">
-            <div class="report-source-cat">NZ data note</div>
-            <div class="report-source-detail report-source-gap">NZ-specific Meta Ads data is not available at industry level. AU figures are used as the closest available proxy and are marked accordingly.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="note m" style="margin-top:8px">
-        <strong>Reports 05 onwards:</strong> Each new report published after launch will have its own sources section added here. Source lists are updated when new reports are released.
-      </div>
-    </div>
 
     <!-- LEGAL -->
     <div class="method-section">
