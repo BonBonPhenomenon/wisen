@@ -6,16 +6,12 @@
   <title>Wisen — Blog</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    /* ── BLOG LISTING ── */
     .blog-hero { padding: 72px 48px 56px; border-bottom: 1px solid var(--rule); }
     .blog-hero-eyebrow { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mauve); font-weight: 500; margin-bottom: 16px; }
     .blog-hero-title { font-family: 'Lora', serif; font-weight: 400; font-size: clamp(32px, 4vw, 48px); line-height: 1.1; margin-bottom: 16px; }
     .blog-hero-title strong { font-style: italic; color: var(--mauve); font-weight: 600; }
     .blog-hero-sub { font-size: 13px; color: var(--ink-light); font-weight: 300; line-height: 1.8; max-width: 480px; }
-
     .blog-grid { padding: 56px 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; }
-    .blog-grid-inner { display: contents; }
-
     .post-card { background: var(--parchment); border: 1px solid var(--rule); border-radius: 10px; padding: 32px 28px; text-decoration: none; display: flex; flex-direction: column; transition: background 0.18s; margin: 6px; }
     .post-card:hover { background: var(--linen); }
     .post-card-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
@@ -24,13 +20,11 @@
     .post-card-title { font-family: 'Lora', serif; font-size: 19px; font-weight: 400; line-height: 1.25; color: var(--ink); margin-bottom: 12px; }
     .post-card-excerpt { font-size: 12px; color: var(--ink-light); font-weight: 300; line-height: 1.75; margin-bottom: 24px; flex: 1; }
     .post-card-cta { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mauve); font-weight: 500; }
-
     .post-card.featured { grid-column: span 3; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
     .post-card.featured .post-card-title { font-size: 26px; }
     .post-card.featured .post-card-excerpt { font-size: 13px; }
     .featured-label { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); font-weight: 500; margin-bottom: 20px; }
     .featured-divider { width: 28px; height: 2px; background: var(--mauve); border-radius: 2px; margin-bottom: 20px; }
-
     @media (max-width: 900px) {
       .blog-hero { padding: 48px 20px 40px; }
       .blog-grid { padding: 32px 20px; grid-template-columns: 1fr; }
@@ -40,7 +34,6 @@
 </head>
 <body>
 
-  <!-- ══ HEADER ════════════════════════════════════════════════ -->
   <header class="site-header">
     <a class="wordmark" href="../index.html">wis<em>e</em>n</a>
     <div class="site-nav-centre">
@@ -60,12 +53,16 @@
             <span class="site-nav-dropdown-num">02</span>
             <span class="site-nav-dropdown-label">Website Build &amp; Maintenance</span>
           </a>
-          <a class="site-nav-dropdown-item" href="paid-ads.html">
+          <a class="site-nav-dropdown-item" href="seo-services.html">
             <span class="site-nav-dropdown-num">03</span>
+            <span class="site-nav-dropdown-label">SEO Services Pricing</span>
+          </a>
+          <a class="site-nav-dropdown-item" href="paid-ads.html">
+            <span class="site-nav-dropdown-num">04</span>
             <span class="site-nav-dropdown-label">Paid Ads Benchmarks</span>
           </a>
           <div class="site-nav-dropdown-divider"></div>
-          <a class="site-nav-dropdown-item" href="disclaimer.html">
+          <a class="site-nav-dropdown-item" href="methodology.html">
             <span class="site-nav-dropdown-num">&#x2197;</span>
             <span class="site-nav-dropdown-label">Data Sources &amp; Methodology</span>
           </a>
@@ -83,17 +80,14 @@
     </div>
   </header>
 
-  <!-- ══ HERO ══════════════════════════════════════════════════ -->
   <div class="blog-hero">
     <div class="blog-hero-eyebrow">Wisen Blog</div>
     <h1 class="blog-hero-title">Thinking about<br><strong>marketing decisions</strong></h1>
     <p class="blog-hero-sub">Practical perspective on marketing pricing, agency relationships, and how NZ and AU businesses can spend smarter.</p>
   </div>
 
-  <!-- ══ POSTS ═════════════════════════════════════════════════ -->
   <div class="blog-grid">
 
-    <!-- Featured post -->
     <a class="post-card featured" href="blog-post.html">
       <div>
         <div class="featured-label">Featured</div>
@@ -102,57 +96,53 @@
           <span class="post-card-tag">Agency pricing</span>
           <span class="post-card-date">23 May 2026</span>
         </div>
-        <div class="post-card-title">Why NZ businesses overpay for marketing — and how to know if you are</div>
+        <div class="post-card-title">Why NZ businesses overpay for marketing &mdash; and how to know if you are</div>
       </div>
       <div>
-        <p class="post-card-excerpt">Most small businesses in New Zealand have no reference point for what marketing actually costs. Agencies rarely publish rates. Benchmarks default to US figures. The result is that business owners either underspend on channels that would work, or overpay for services that are priced for larger markets. Here's what to look for — and how to ask better questions before you sign anything.</p>
-        <div class="post-card-cta">Read article →</div>
+        <p class="post-card-excerpt">Most small businesses in New Zealand have no reference point for what marketing actually costs. Agencies rarely publish rates. Benchmarks default to US figures. The result is that business owners either underspend on channels that would work, or overpay for services priced for larger markets. Here is what to look for -- and how to ask better questions before you sign anything.</p>
+        <div class="post-card-cta">Read article &rarr;</div>
       </div>
     </a>
 
-    <!-- Post 2 -->
     <a class="post-card" href="blog-post.html">
       <div class="post-card-meta">
         <span class="post-card-tag">Google Ads</span>
         <span class="post-card-date">18 May 2026</span>
       </div>
       <div class="post-card-title">What a realistic Google Ads budget looks like for a NZ trades business</div>
-      <p class="post-card-excerpt">A plumber in Auckland and a legal firm in Wellington both need Google Ads to work, but they're operating in completely different CPC environments. We break down what the numbers actually look like.</p>
-      <div class="post-card-cta">Read article →</div>
+      <p class="post-card-excerpt">A plumber in Auckland and a legal firm in Wellington both need Google Ads to work, but they are operating in completely different CPC environments. We break down what the numbers actually look like.</p>
+      <div class="post-card-cta">Read article &rarr;</div>
     </a>
 
-    <!-- Post 3 -->
     <a class="post-card" href="blog-post.html">
       <div class="post-card-meta">
         <span class="post-card-tag">Social media</span>
         <span class="post-card-date">12 May 2026</span>
       </div>
-      <div class="post-card-title">The percentage-of-spend model: why it's common and why it's worth questioning</div>
-      <p class="post-card-excerpt">Many agencies charge 10–20% of your ad spend as their management fee. At low budgets this sounds reasonable. At scale it stops making sense. Here's how to think about it.</p>
-      <div class="post-card-cta">Read article →</div>
+      <div class="post-card-title">The percentage-of-spend model: why it is common and why it is worth questioning</div>
+      <p class="post-card-excerpt">Many agencies charge 10&ndash;20% of your ad spend as their management fee. At low budgets this sounds reasonable. At scale it stops making sense. Here is how to think about it.</p>
+      <div class="post-card-cta">Read article &rarr;</div>
     </a>
 
-    <!-- Post 4 -->
     <a class="post-card" href="blog-post.html">
       <div class="post-card-meta">
         <span class="post-card-tag">Websites</span>
         <span class="post-card-date">5 May 2026</span>
       </div>
       <div class="post-card-title">The real cost of a cheap website build in 2026</div>
-      <p class="post-card-excerpt">A $1,500 freelancer quote is not the same as a $1,500 investment. What looks like a saving upfront often becomes a cost in the second year when support disappears and the site needs rebuilding.</p>
-      <div class="post-card-cta">Read article →</div>
+      <p class="post-card-excerpt">A $1,500 freelancer quote is not the same as a $1,500 investment. What looks like a saving upfront often becomes a cost in year two when support disappears and the site needs rebuilding.</p>
+      <div class="post-card-cta">Read article &rarr;</div>
     </a>
 
   </div>
 
-  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
   <footer class="site-footer">
     <div class="footer-copy">&copy; 2026 Wisen</div>
     <nav class="footer-nav">
       <a class="footer-nav-link" href="../index.html#reports">Reports</a>
       <a class="footer-nav-link" href="blog.html">Blog</a>
       <a class="footer-nav-link" href="contact.html">Contact</a>
-      <a class="footer-nav-link" href="disclaimer.html">Data &amp; Disclaimer</a>
+      <a class="footer-nav-link" href="methodology.html">Data &amp; Methodology</a>
     </nav>
   </footer>
 
