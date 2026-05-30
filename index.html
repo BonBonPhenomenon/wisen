@@ -18,100 +18,26 @@
     body { background: var(--parchment); font-family: 'Poppins', sans-serif; color: var(--ink); min-height: 100vh; display: flex; flex-direction: column; }
 
     /* ══ NAV ══════════════════════════════════════════════════════ */
-    .nav {
-      padding: 0 48px;
-      border-bottom: 1px solid var(--rule);
-      display: flex;
-      align-items: stretch;
-      justify-content: space-between;
-      background: var(--parchment);
-      position: sticky;
-      top: 0;
-      z-index: 20;
-    }
-    .nav-wordmark {
-      font-family: 'Lora', serif;
-      font-weight: 400;
-      font-size: 20px;
-      color: var(--ink);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      padding: 20px 0;
-      flex-shrink: 0;
-    }
+    .nav { padding: 0 48px; border-bottom: 1px solid var(--rule); display: flex; align-items: stretch; justify-content: space-between; background: var(--parchment); position: sticky; top: 0; z-index: 20; }
+    .nav-wordmark { font-family: 'Lora', serif; font-weight: 400; font-size: 20px; color: var(--ink); text-decoration: none; display: flex; align-items: center; padding: 20px 0; flex-shrink: 0; }
     .nav-wordmark em { font-style: italic; color: var(--mauve); }
-
-    .nav-links {
-      display: flex;
-      align-items: stretch;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      height: 100%;
-    }
-    .nav-link {
-      display: flex;
-      align-items: center;
-      padding: 0 18px;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-      transition: all 0.18s;
-      white-space: nowrap;
-    }
+    .nav-links { display: flex; align-items: stretch; position: absolute; left: 50%; transform: translateX(-50%); height: 100%; }
+    .nav-link { display: flex; align-items: center; padding: 0 18px; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; border-bottom: 2px solid transparent; transition: all 0.18s; white-space: nowrap; }
     .nav-link:hover { color: var(--ink); }
     .nav-link.active { color: var(--mauve); border-bottom-color: var(--mauve); }
-
     .nav-dropdown { position: relative; display: flex; align-items: stretch; }
-    .nav-dropdown-trigger {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      padding: 0 18px;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-      background: none;
-      border: none;
-      border-bottom: 2px solid transparent;
-      cursor: pointer;
-      font-family: 'Poppins', sans-serif;
-      transition: all 0.18s;
-    }
+    .nav-dropdown-trigger { display: flex; align-items: center; gap: 5px; padding: 0 18px; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; font-family: 'Poppins', sans-serif; transition: all 0.18s; }
     .nav-dropdown-trigger svg { transition: transform 0.18s; }
     .nav-dropdown:hover .nav-dropdown-trigger { color: var(--ink); }
     .nav-dropdown:hover .nav-dropdown-trigger svg { transform: rotate(180deg); }
-    .nav-dropdown-menu {
-      position: absolute;
-      top: calc(100% + 1px);
-      left: 50%;
-      transform: translateX(-50%) translateY(6px);
-      background: var(--parchment);
-      border: 1px solid var(--rule);
-      border-radius: 8px;
-      min-width: 240px;
-      padding: 8px 0;
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.18s;
-      box-shadow: 0 8px 24px rgba(44,40,32,0.08);
-      z-index: 30;
-    }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 1px); left: 50%; transform: translateX(-50%) translateY(6px); background: var(--parchment); border: 1px solid var(--rule); border-radius: 8px; min-width: 240px; padding: 8px 0; opacity: 0; pointer-events: none; transition: all 0.18s; box-shadow: 0 8px 24px rgba(44,40,32,0.08); z-index: 30; }
     .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
     .nav-dropdown-item { display: flex; flex-direction: column; padding: 12px 18px; text-decoration: none; transition: background 0.14s; }
     .nav-dropdown-item:hover { background: var(--linen); }
     .nav-dropdown-item-num { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mauve-l); font-weight: 500; margin-bottom: 3px; }
     .nav-dropdown-item-label { font-size: 12px; color: var(--ink); font-weight: 400; }
     .nav-dropdown-divider { height: 1px; background: var(--rule); margin: 6px 0; }
-
-    .nav-right { display: flex; align-items: center; padding: 14px 0; gap: 0; }
+    .nav-right { display: flex; align-items: center; padding: 14px 0; }
     .currency-pills { display: flex; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
     .currency-pill { padding: 7px 11px; font-size: 10px; font-weight: 500; letter-spacing: 0.06em; cursor: pointer; border: none; background: transparent; color: var(--ink-faint); font-family: 'Poppins', sans-serif; transition: all 0.18s; }
     .currency-pill + .currency-pill { border-left: 1px solid var(--rule); }
@@ -142,6 +68,7 @@
     .about-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mauve); font-weight: 500; padding-top: 6px; }
     .about-title { font-family: 'Lora', serif; font-weight: 400; font-size: 28px; margin-bottom: 20px; line-height: 1.2; }
     .about-body { font-size: 13px; color: var(--ink-light); line-height: 1.85; font-weight: 300; max-width: 580px; }
+    .about-byline { font-size: 12px; color: var(--ink-faint); font-weight: 300; line-height: 1.7; margin-top: 20px; border-top: 1px solid var(--linen-dark); padding-top: 16px; max-width: 580px; }
     .about-pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin-top: 36px; }
     .pillar { background: var(--parchment); padding: 24px 20px; }
     .pillar-word { font-family: 'Lora', serif; font-size: 18px; font-weight: 400; margin-bottom: 10px; }
@@ -164,6 +91,21 @@
     .report-card.coming-soon { opacity: 0.5; cursor: default; pointer-events: none; }
     .coming-badge { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; background: var(--linen-dark); color: var(--ink-faint); margin-bottom: 14px; }
 
+    /* ══ NOTIFY STRIP ════════════════════════════════════════════ */
+    .notify-strip { padding: 56px 48px; border-bottom: 1px solid var(--rule); background: var(--linen); display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: center; }
+    .notify-eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mauve); font-weight: 500; margin-bottom: 12px; }
+    .notify-title { font-family: 'Lora', serif; font-weight: 400; font-size: 24px; margin-bottom: 8px; line-height: 1.2; }
+    .notify-sub { font-size: 12px; color: var(--ink-light); font-weight: 300; line-height: 1.7; }
+    .notify-right { min-width: 320px; }
+    .notify-row { display: flex; }
+    .notify-input { flex: 1; background: var(--parchment); border: 1px solid var(--rule); border-right: none; padding: 12px 14px; font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 300; color: var(--ink); outline: none; transition: border-color 0.15s; }
+    .notify-input:focus { border-color: var(--mauve); }
+    .notify-input::placeholder { color: var(--ink-faint); }
+    .notify-btn { background: var(--ink); color: var(--parchment); font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; border: none; padding: 12px 20px; cursor: pointer; transition: background 0.15s; white-space: nowrap; }
+    .notify-btn:hover { background: var(--mauve); }
+    .notify-note { font-size: 10px; color: var(--ink-faint); font-weight: 300; margin-top: 10px; }
+    .notify-success { display: none; font-size: 13px; color: var(--olive); font-weight: 300; padding: 12px 0; }
+
     /* ══ HOW IT WORKS ═════════════════════════════════════════════ */
     .how-strip { padding: 72px 48px; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
     .how-steps { display: flex; flex-direction: column; }
@@ -174,15 +116,7 @@
     .how-step-body { font-size: 12px; color: var(--ink-light); font-weight: 300; line-height: 1.7; }
 
     /* ══ FOOTER ═══════════════════════════════════════════════════ */
-    .site-footer {
-      margin-top: auto;
-      border-top: 1px solid var(--rule);
-      padding: 20px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
+    .site-footer { margin-top: auto; border-top: 1px solid var(--rule); padding: 20px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .footer-copy { font-size: 10px; color: var(--ink-faint); font-weight: 300; }
     .footer-nav { display: flex; gap: 24px; align-items: center; }
     .footer-nav-link { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; transition: color 0.18s; }
@@ -198,6 +132,8 @@
       .reports-section { padding: 48px 24px; }
       .reports-grid { grid-template-columns: 1fr; }
       .about-pillars { grid-template-columns: 1fr; }
+      .notify-strip { grid-template-columns: 1fr; gap: 32px; padding: 48px 24px; }
+      .notify-right { min-width: 0; width: 100%; }
       .site-footer { padding: 20px 24px; flex-wrap: wrap; gap: 14px; }
       .footer-nav { gap: 16px; flex-wrap: wrap; }
     }
@@ -230,8 +166,12 @@
             <span class="nav-dropdown-item-num">03</span>
             <span class="nav-dropdown-item-label">SEO Services Pricing</span>
           </a>
+          <a class="nav-dropdown-item" href="pages/paid-ads.html">
+            <span class="nav-dropdown-item-num">04</span>
+            <span class="nav-dropdown-item-label">Paid Ads Benchmarks</span>
+          </a>
           <div class="nav-dropdown-divider"></div>
-          <a class="nav-dropdown-item" href="pages/disclaimer.html">
+          <a class="nav-dropdown-item" href="pages/methodology.html">
             <span class="nav-dropdown-item-num">&#x2197;</span>
             <span class="nav-dropdown-item-label">Data Sources &amp; Methodology</span>
           </a>
@@ -253,67 +193,68 @@
   <!-- ══ HERO ═══════════════════════════════════════════════════ -->
   <section class="hero">
     <div>
-      <div class="hero-eyebrow">Marketing pricing · NZ &amp; AU</div>
+      <div class="hero-eyebrow">Marketing pricing &middot; NZ &amp; AU</div>
       <h1 class="hero-title">What marketing<br><strong>actually costs</strong></h1>
       <p class="hero-body">Agencies rarely publish their rates. Benchmarks default to US figures. NZ and AU businesses end up evaluating quotes with nothing to compare them to. Wisen researches real local pricing and publishes it -- free, sourced, and scoped to this market.</p>
       <div>
         <a class="hero-cta" href="#reports">View reports</a>
-        <a class="hero-cta-secondary" href="pages/disclaimer.html">How we research &#x2197;</a>
+        <a class="hero-cta-secondary" href="pages/methodology.html">How Wisen researches &#x2197;</a>
       </div>
     </div>
     <div class="hero-right">
       <div class="hero-stat-row">
         <div class="hero-stat">
           <div class="hero-stat-label">NZ social media retainer</div>
-          <div class="hero-stat-value m">$1.5–3k</div>
-          <div class="hero-stat-sub">NZD / month · growth tier · 2026</div>
+          <div class="hero-stat-value m">$1.5&ndash;3k</div>
+          <div class="hero-stat-sub">NZD / month &middot; growth tier &middot; 2026</div>
         </div>
         <div class="hero-stat">
           <div class="hero-stat-label">NZ brochure website</div>
-          <div class="hero-stat-value o">$4–8k</div>
-          <div class="hero-stat-sub">NZD · agency build · 2026</div>
+          <div class="hero-stat-value o">$4&ndash;8k</div>
+          <div class="hero-stat-sub">NZD &middot; agency build &middot; 2026</div>
         </div>
       </div>
       <div class="hero-stat-row">
         <div class="hero-stat">
           <div class="hero-stat-label">NZ SEO retainer</div>
-          <div class="hero-stat-value m">$1–2k</div>
-          <div class="hero-stat-sub">NZD / month · agency · 2026</div>
+          <div class="hero-stat-value m">$1&ndash;2k</div>
+          <div class="hero-stat-sub">NZD / month &middot; agency &middot; 2026</div>
         </div>
         <div class="hero-stat">
           <div class="hero-stat-label">NZ website maintenance</div>
-          <div class="hero-stat-value o">$100–300</div>
-          <div class="hero-stat-sub">NZD / month · care plan · 2026</div>
+          <div class="hero-stat-value o">$100&ndash;300</div>
+          <div class="hero-stat-sub">NZD / month &middot; care plan &middot; 2026</div>
         </div>
       </div>
       <div class="hero-stat-row">
         <div class="hero-stat">
           <div class="hero-stat-label">Reports at launch</div>
           <div class="hero-stat-value">3</div>
-          <div class="hero-stat-sub">Social · website · SEO</div>
+          <div class="hero-stat-sub">Social &middot; website &middot; SEO</div>
         </div>
         <div class="hero-stat">
           <div class="hero-stat-label">Sources researched</div>
           <div class="hero-stat-value">26+</div>
-          <div class="hero-stat-sub">NZ and AU · 2025–2026</div>
+          <div class="hero-stat-sub">NZ and AU &middot; 2025&ndash;2026</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ WHAT IS WISEN ══════════════════════════════════════════ -->
+  <!-- ══ ABOUT ══════════════════════════════════════════════════ -->
   <section class="about-strip">
     <div class="about-label">What is Wisen</div>
     <div>
       <h2 class="about-title">Independent research.<br>Local figures.</h2>
       <p class="about-body">Marketing pricing in NZ and AU is opaque by design. Agencies don't publish rates. Freelancers price in a vacuum. Business owners evaluate quotes with no reference point -- and end up overpaying, underspending, or making decisions based on a single number with no context. Wisen researches real agency, contractor, and platform pricing from NZ and AU sources and publishes it here. No paywalls, no US benchmarks relabelled, no affiliation with any provider in the data.</p>
+      <p class="about-byline">Wisen is operated by Bonnie Vujcich -- marketing practitioner, 20 years across NZ and AU. She built this because she needed it too.</p>
       <div class="about-pillars">
         <div class="pillar">
           <div class="pillar-word">Consid<em>e</em>red</div>
           <div class="pillar-desc">Every figure is sourced, dated, and scoped to this market. Not borrowed from somewhere else and adjusted.</div>
         </div>
         <div class="pillar">
-          <div class="pillar-word">Transp<em>a</em>rent</div>
+          <div class="pillar-word">Transpar<em>e</em>nt</div>
           <div class="pillar-desc">Sources are named. Where NZ data is thin and estimation was required, that is stated clearly.</div>
         </div>
         <div class="pillar">
@@ -327,11 +268,10 @@
   <!-- ══ REPORTS ════════════════════════════════════════════════ -->
   <section class="reports-section" id="reports">
     <div class="section-header">
-      <div class="section-eyebrow">Current reports · 2025–2026</div>
+      <div class="section-eyebrow">Current reports &middot; 2025&ndash;2026</div>
     </div>
     <div class="reports-grid">
 
-      <!-- Launch reports -->
       <a class="report-card" href="pages/social-media.html">
         <div class="report-card-num">Report 01</div>
         <div class="report-card-title">Social Media Agency Pricing</div>
@@ -368,7 +308,6 @@
         <div class="report-card-cta">View report &#x2192;</div>
       </a>
 
-      <!-- Post-launch pipeline -->
       <a class="report-card coming-soon" href="#">
         <div class="coming-badge">Coming soon</div>
         <div class="report-card-num">Report 04</div>
@@ -444,9 +383,29 @@
     </div>
   </section>
 
-  <!-- ══ HOW IT WORKS ══════════════════════════════════════════ -->
+  <!-- ══ NOTIFY STRIP ══════════════════════════════════════════ -->
+  <section class="notify-strip">
+    <div>
+      <div class="notify-eyebrow">New reports every six to eight weeks</div>
+      <h2 class="notify-title">Get notified when they land</h2>
+      <p class="notify-sub">No newsletters, no sales emails. One notification per report, when it publishes.</p>
+    </div>
+    <div class="notify-right">
+      <div id="notify-form">
+        <div class="notify-row">
+          <input type="email" class="notify-input" id="notify-email" placeholder="Email address" autocomplete="email">
+          <!-- TODO: wire to GHL before launch -->
+          <button class="notify-btn" onclick="notifySubmit()">Notify me</button>
+        </div>
+        <p class="notify-note">Already on the list from the modal? No need to sign up again.</p>
+      </div>
+      <div class="notify-success" id="notify-success">You are on the list.</div>
+    </div>
+  </section>
+
+  <!-- ══ HOW WISEN WORKS ════════════════════════════════════════ -->
   <section class="how-strip">
-    <div class="about-label">How we work</div>
+    <div class="about-label">How Wisen works</div>
     <div class="how-steps">
       <div class="how-step">
         <div class="how-step-num">01</div>
@@ -458,8 +417,8 @@
       <div class="how-step">
         <div class="how-step-num">02</div>
         <div>
-          <div class="how-step-title">Reviewed against local market knowledge</div>
-          <div class="how-step-body">Every report is verified by someone with direct experience inside NZ and AU agency operations. Where NZ-specific data is thin, estimates are derived from known market factors -- and that is stated clearly in the methodology.</div>
+          <div class="how-step-title">Reviewed by Bonnie Vujcich before publication</div>
+          <div class="how-step-body">With 20 years inside NZ and AU marketing -- in-house, contracting, and agency-side -- Bonnie applies direct market knowledge to every figure before it goes live. Where NZ-specific data is thin, that is stated explicitly in the methodology.</div>
         </div>
       </div>
       <div class="how-step">
@@ -486,7 +445,7 @@
       <a class="footer-nav-link" href="#reports">Reports</a>
       <a class="footer-nav-link" href="pages/blog.html">Blog</a>
       <a class="footer-nav-link" href="pages/contact.html">Contact</a>
-      <a class="footer-nav-link" href="pages/disclaimer.html">Data &amp; Disclaimer</a>
+      <a class="footer-nav-link" href="pages/methodology.html">Data &amp; Methodology</a>
     </nav>
   </footer>
 
@@ -501,186 +460,37 @@
     justify-content: center;
     padding: 24px;
   ">
-    <div style="
-      background: var(--parchment);
-      max-width: 460px;
-      width: 100%;
-      padding: 2.5rem 2.75rem 2.25rem;
-      position: relative;
-    ">
-      <button
-        onclick="wisenModalClose()"
-        aria-label="Close"
-        style="
-          position: absolute;
-          top: 18px;
-          right: 18px;
-          background: none;
-          border: none;
-          cursor: pointer;
-          color: var(--ink-faint);
-          font-size: 20px;
-          line-height: 1;
-          padding: 0;
-          font-family: 'Poppins', sans-serif;
-          transition: color 0.15s;
-        "
-        onmouseover="this.style.color='var(--ink)'"
-        onmouseout="this.style.color='var(--ink-faint)'"
-      >&#x2715;</button>
+    <div style="background:var(--parchment);max-width:460px;width:100%;padding:2.5rem 2.75rem 2.25rem;position:relative;">
+      <button onclick="wisenModalClose()" aria-label="Close" style="position:absolute;top:18px;right:18px;background:none;border:none;cursor:pointer;color:var(--ink-faint);font-size:20px;line-height:1;padding:0;font-family:'Poppins',sans-serif;transition:color 0.15s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--ink-faint)'">&#x2715;</button>
 
       <div id="wisen-modal-form">
-        <div style="
-          font-size: 8px;
-          font-weight: 500;
-          letter-spacing: 0.14em;
-          text-transform: uppercase;
-          color: var(--mauve);
-          margin-bottom: 1.25rem;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        ">
+        <div style="font-size:8px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mauve);margin-bottom:1.25rem;display:flex;align-items:center;gap:10px;">
           Reports &middot; Coming 14 September 2026
           <span style="flex:1;height:1px;background:var(--rule);display:block;"></span>
         </div>
 
-        <div style="
-          font-family: 'Lora', serif;
-          font-weight: 400;
-          font-size: 11px;
-          letter-spacing: 0.22em;
-          text-transform: uppercase;
-          color: var(--ink);
-          margin-bottom: 1.5rem;
-          display: block;
-        ">Wis<em style="font-style:italic;color:var(--mauve)">e</em>n</div>
+        <div style="font-family:'Lora',serif;font-weight:400;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);margin-bottom:1.5rem;display:block;">Wis<em style="font-style:italic;color:var(--mauve)">e</em>n</div>
 
-        <h2 id="modal-heading" style="
-          font-family: 'Lora', serif;
-          font-weight: 400;
-          font-size: 22px;
-          line-height: 1.35;
-          color: var(--ink);
-          margin-bottom: 0.85rem;
-        ">These reports aren't live yet.</h2>
+        <h2 id="modal-heading" style="font-family:'Lora',serif;font-weight:400;font-size:22px;line-height:1.35;color:var(--ink);margin-bottom:0.85rem;">These reports aren't live yet.</h2>
 
-        <p style="
-          font-family: 'Poppins', sans-serif;
-          font-weight: 300;
-          font-size: 13px;
-          line-height: 1.75;
-          color: var(--ink-light);
-          margin-bottom: 1.75rem;
-        ">Wisen launches 14 September 2026. Leave your email and you will be the first to know when the reports land.</p>
+        <p style="font-family:'Poppins',sans-serif;font-weight:300;font-size:13px;line-height:1.75;color:var(--ink-light);margin-bottom:1.75rem;">Wisen launches 14 September 2026. Leave your email and you will be the first to know when the reports land.</p>
 
         <hr style="height:1px;background:var(--rule);border:none;margin-bottom:1.5rem;">
 
         <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:1rem;">
-          <input
-            type="text"
-            id="wisen-name"
-            placeholder="First name"
-            autocomplete="given-name"
-            aria-label="First name"
-            style="
-              font-family: 'Poppins', sans-serif;
-              font-weight: 300;
-              font-size: 13px;
-              color: var(--ink);
-              background: var(--linen);
-              border: 1px solid var(--rule);
-              padding: 11px 14px;
-              outline: none;
-              border-radius: 0;
-              width: 100%;
-              box-sizing: border-box;
-              transition: border-color 0.15s;
-            "
-            onfocus="this.style.borderColor='var(--mauve)';this.style.background='var(--parchment)'"
-            onblur="this.style.borderColor='var(--rule)';this.style.background='var(--linen)'"
-          >
-          <input
-            type="email"
-            id="wisen-email"
-            placeholder="Email address"
-            autocomplete="email"
-            aria-label="Email address"
-            style="
-              font-family: 'Poppins', sans-serif;
-              font-weight: 300;
-              font-size: 13px;
-              color: var(--ink);
-              background: var(--linen);
-              border: 1px solid var(--rule);
-              padding: 11px 14px;
-              outline: none;
-              border-radius: 0;
-              width: 100%;
-              box-sizing: border-box;
-              transition: border-color 0.15s;
-            "
-            onfocus="this.style.borderColor='var(--mauve)';this.style.background='var(--parchment)'"
-            onblur="this.style.borderColor='var(--rule)';this.style.background='var(--linen)'"
-          >
+          <input type="text" id="wisen-name" placeholder="First name" autocomplete="given-name" aria-label="First name" style="font-family:'Poppins',sans-serif;font-weight:300;font-size:13px;color:var(--ink);background:var(--linen);border:1px solid var(--rule);padding:11px 14px;outline:none;border-radius:0;width:100%;box-sizing:border-box;transition:border-color 0.15s;" onfocus="this.style.borderColor='var(--mauve)';this.style.background='var(--parchment)'" onblur="this.style.borderColor='var(--rule)';this.style.background='var(--linen)'">
+          <input type="email" id="wisen-email" placeholder="Email address" autocomplete="email" aria-label="Email address" style="font-family:'Poppins',sans-serif;font-weight:300;font-size:13px;color:var(--ink);background:var(--linen);border:1px solid var(--rule);padding:11px 14px;outline:none;border-radius:0;width:100%;box-sizing:border-box;transition:border-color 0.15s;" onfocus="this.style.borderColor='var(--mauve)';this.style.background='var(--parchment)'" onblur="this.style.borderColor='var(--rule)';this.style.background='var(--linen)'">
         </div>
 
-        <button
-          onclick="wisenModalSubmit()"
-          style="
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--parchment);
-            background: var(--ink);
-            border: none;
-            padding: 13px 20px;
-            cursor: pointer;
-            width: 100%;
-            transition: background 0.15s;
-            border-radius: 0;
-          "
-          onmouseover="this.style.background='var(--mauve)'"
-          onmouseout="this.style.background='var(--ink)'"
-        >Notify me when reports are live</button>
+        <button onclick="wisenModalSubmit()" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--parchment);background:var(--ink);border:none;padding:13px 20px;cursor:pointer;width:100%;transition:background 0.15s;border-radius:0;" onmouseover="this.style.background='var(--mauve)'" onmouseout="this.style.background='var(--ink)'">Notify me when reports are live</button>
 
-        <p style="
-          font-family: 'Poppins', sans-serif;
-          font-weight: 300;
-          font-size: 10px;
-          color: var(--ink-faint);
-          line-height: 1.6;
-          margin-top: 1rem;
-          text-align: center;
-        ">No newsletters. No sales emails. One notification when Wisen launches, and updates when new reports are published.</p>
+        <p style="font-family:'Poppins',sans-serif;font-weight:300;font-size:10px;color:var(--ink-faint);line-height:1.6;margin-top:1rem;text-align:center;">No newsletters. No sales emails. One notification when Wisen launches, and updates when new reports are published.</p>
       </div>
 
       <div id="wisen-modal-success" style="display:none;text-align:center;padding:1rem 0;">
-        <p style="
-          font-size: 13px;
-          font-family: 'Poppins', sans-serif;
-          font-weight: 300;
-          color: var(--olive);
-          letter-spacing: 0.05em;
-          margin-bottom: 0.75rem;
-        ">-- Confirmed --</p>
-        <h2 style="
-          font-family: 'Lora', serif;
-          font-weight: 400;
-          font-size: 20px;
-          color: var(--ink);
-          margin-bottom: 0.75rem;
-        ">You are on the list.</h2>
-        <p style="
-          font-family: 'Poppins', sans-serif;
-          font-weight: 300;
-          font-size: 12px;
-          color: var(--ink-light);
-          line-height: 1.75;
-          margin: 0;
-        ">Wisen launches 14 September 2026. When the reports go live, you will hear about it before anyone else.</p>
+        <p style="font-size:13px;font-family:'Poppins',sans-serif;font-weight:300;color:var(--olive);letter-spacing:0.05em;margin-bottom:0.75rem;">-- Confirmed --</p>
+        <h2 style="font-family:'Lora',serif;font-weight:400;font-size:20px;color:var(--ink);margin-bottom:0.75rem;">You are on the list.</h2>
+        <p style="font-family:'Poppins',sans-serif;font-weight:300;font-size:12px;color:var(--ink-light);line-height:1.75;margin:0;">Wisen launches 14 September 2026. When the reports go live, you will hear about it before anyone else.</p>
       </div>
     </div>
   </div>
@@ -715,9 +525,21 @@
         el.focus();
         return;
       }
-      /* Placeholder -- wire to GHL or Mailchimp here */
+      /* TODO: wire to GHL before launch */
       document.getElementById('wisen-modal-form').style.display = 'none';
       document.getElementById('wisen-modal-success').style.display = 'block';
+    }
+
+    function notifySubmit() {
+      var email = document.getElementById('notify-email').value.trim();
+      if (!email || !email.includes('@')) {
+        document.getElementById('notify-email').style.borderColor = 'var(--mauve)';
+        document.getElementById('notify-email').focus();
+        return;
+      }
+      /* TODO: wire to GHL before launch */
+      document.getElementById('notify-form').style.display = 'none';
+      document.getElementById('notify-success').style.display = 'block';
     }
 
     overlay.addEventListener('click', function(e) {
