@@ -6,73 +6,34 @@
   <title>Wisen — Contact</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    /* ── CONTACT PAGE ── */
     .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 65px); }
-
     .contact-left { padding: 72px 56px; border-right: 1px solid var(--rule); display: flex; flex-direction: column; }
     .contact-eyebrow { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mauve); font-weight: 500; margin-bottom: 20px; }
     .contact-title { font-family: 'Lora', serif; font-weight: 400; font-size: clamp(28px, 3.5vw, 44px); line-height: 1.1; margin-bottom: 20px; }
     .contact-title strong { font-style: italic; color: var(--mauve); font-weight: 600; }
     .contact-body { font-size: 13px; color: var(--ink-light); font-weight: 300; line-height: 1.85; max-width: 400px; margin-bottom: 48px; }
-
     .contact-reasons { display: flex; flex-direction: column; gap: 1px; margin-top: auto; }
     .contact-reason { display: flex; gap: 16px; padding: 18px 0; border-top: 1px solid var(--linen-dark); align-items: flex-start; }
     .contact-reason:last-child { border-bottom: 1px solid var(--linen-dark); }
     .contact-reason-num { font-family: 'Lora', serif; font-size: 16px; color: var(--mauve-l); font-weight: 400; flex-shrink: 0; padding-top: 1px; }
     .contact-reason-title { font-size: 12px; font-weight: 500; margin-bottom: 4px; }
     .contact-reason-body { font-size: 11px; color: var(--ink-faint); font-weight: 300; line-height: 1.7; }
-
     .contact-right { padding: 72px 56px; background: var(--linen); }
     .form-title { font-family: 'Lora', serif; font-weight: 400; font-size: 22px; margin-bottom: 32px; }
-
     .form-group { margin-bottom: 20px; }
     .form-label { display: block; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); font-weight: 500; margin-bottom: 8px; }
-    .form-input, .form-select, .form-textarea {
-      width: 100%;
-      background: var(--parchment);
-      border: 1px solid var(--rule);
-      border-radius: 6px;
-      padding: 12px 14px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--ink);
-      transition: border-color 0.18s;
-      outline: none;
-      appearance: none;
-    }
+    .form-input, .form-select, .form-textarea { width: 100%; background: var(--parchment); border: 1px solid var(--rule); border-radius: 6px; padding: 12px 14px; font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 300; color: var(--ink); transition: border-color 0.18s; outline: none; appearance: none; }
     .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--mauve); }
     .form-input::placeholder, .form-textarea::placeholder { color: var(--ink-faint); }
     .form-textarea { resize: vertical; min-height: 120px; line-height: 1.7; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-submit {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--ink);
-      color: var(--parchment);
-      font-family: 'Poppins', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border: none;
-      padding: 14px 28px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.18s;
-      margin-top: 8px;
-      width: 100%;
-      justify-content: center;
-    }
+    .form-submit { display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: var(--parchment); font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; border: none; padding: 14px 28px; border-radius: 6px; cursor: pointer; transition: background 0.18s; margin-top: 8px; width: 100%; justify-content: center; }
     .form-submit:hover { background: var(--mauve); }
     .form-note { font-size: 10px; color: var(--ink-faint); font-weight: 300; line-height: 1.7; margin-top: 14px; text-align: center; }
-
     .form-success { display: none; text-align: center; padding: 40px 20px; }
     .form-success-icon { font-size: 32px; margin-bottom: 16px; }
     .form-success-title { font-family: 'Lora', serif; font-size: 22px; font-weight: 400; margin-bottom: 12px; }
     .form-success-body { font-size: 13px; color: var(--ink-light); font-weight: 300; line-height: 1.8; }
-
     @media (max-width: 900px) {
       .contact-wrap { grid-template-columns: 1fr; min-height: auto; }
       .contact-left { padding: 48px 20px; border-right: none; border-bottom: 1px solid var(--rule); }
@@ -83,7 +44,6 @@
 </head>
 <body>
 
-  <!-- ══ HEADER ════════════════════════════════════════════════ -->
   <header class="site-header">
     <a class="wordmark" href="../index.html">wis<em>e</em>n</a>
     <div class="site-nav-centre">
@@ -103,12 +63,16 @@
             <span class="site-nav-dropdown-num">02</span>
             <span class="site-nav-dropdown-label">Website Build &amp; Maintenance</span>
           </a>
-          <a class="site-nav-dropdown-item" href="paid-ads.html">
+          <a class="site-nav-dropdown-item" href="seo-services.html">
             <span class="site-nav-dropdown-num">03</span>
+            <span class="site-nav-dropdown-label">SEO Services Pricing</span>
+          </a>
+          <a class="site-nav-dropdown-item" href="paid-ads.html">
+            <span class="site-nav-dropdown-num">04</span>
             <span class="site-nav-dropdown-label">Paid Ads Benchmarks</span>
           </a>
           <div class="site-nav-dropdown-divider"></div>
-          <a class="site-nav-dropdown-item" href="disclaimer.html">
+          <a class="site-nav-dropdown-item" href="methodology.html">
             <span class="site-nav-dropdown-num">&#x2197;</span>
             <span class="site-nav-dropdown-label">Data Sources &amp; Methodology</span>
           </a>
@@ -126,20 +90,19 @@
     </div>
   </header>
 
-  <!-- ══ CONTACT ════════════════════════════════════════════════ -->
   <div class="contact-wrap">
 
     <div class="contact-left">
       <div class="contact-eyebrow">Get in touch</div>
       <h1 class="contact-title">Happy to<br><strong>hear from you</strong></h1>
-      <p class="contact-body">Wisen is a one-person operation focused on making NZ and AU marketing pricing legible. If something in a report doesn't match your experience, if you have a data point that contradicts what you're seeing, or if you just want to talk marketing -- that is a worthwhile conversation.</p>
+      <p class="contact-body">Wisen is a one-person operation focused on making NZ and AU marketing pricing legible. If something in a report doesn't match your experience, if you have a data point worth looking at, or if you just want to talk marketing -- that is a worthwhile conversation.</p>
 
       <div class="contact-reasons">
         <div class="contact-reason">
           <div class="contact-reason-num">01</div>
           <div>
             <div class="contact-reason-title">Questions or corrections about the data</div>
-            <div class="contact-reason-body">If a figure doesn't match what you're seeing in the market, or you've come across a pricing that surprises you -- that data is useful. The research improves when people push back on it.</div>
+            <div class="contact-reason-body">If a figure doesn't match what you're seeing in the market, or you've come across pricing that surprises you -- that data is useful. The research improves when people push back on it.</div>
           </div>
         </div>
         <div class="contact-reason">
@@ -162,6 +125,7 @@
     <div class="contact-right">
       <div class="form-title">Send a message</div>
 
+      <!-- TODO: wire form action to GHL before launch -->
       <form id="contact-form" onsubmit="handleSubmit(event)">
         <div class="form-row">
           <div class="form-group">
@@ -197,30 +161,33 @@
       </form>
 
       <div class="form-success" id="form-success">
-        <div class="form-success-icon">✓</div>
+        <div class="form-success-icon">&#x2713;</div>
         <div class="form-success-title">Message sent</div>
-        <p class="form-success-body">Thanks for getting in touch. We'll come back to you within a few business days.</p>
+        <p class="form-success-body">Back to you within a couple of business days.</p>
       </div>
     </div>
 
   </div>
 
-  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
   <footer class="site-footer">
     <div class="footer-copy">&copy; 2026 Wisen</div>
     <nav class="footer-nav">
       <a class="footer-nav-link" href="../index.html#reports">Reports</a>
       <a class="footer-nav-link" href="blog.html">Blog</a>
       <a class="footer-nav-link" href="contact.html">Contact</a>
-      <a class="footer-nav-link" href="disclaimer.html">Data &amp; Disclaimer</a>
+      <a class="footer-nav-link" href="methodology.html">Data &amp; Methodology</a>
     </nav>
   </footer>
 
   <script src="../js/main.js"></script>
   <script>
+    function setCurrency(val, btn) {
+      document.querySelectorAll('.currency-pill').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+    }
     function handleSubmit(e) {
       e.preventDefault();
-      // Placeholder — replace form action with GHL embed when ready
+      /* TODO: replace with GHL embed before launch */
       document.getElementById('contact-form').style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
     }
