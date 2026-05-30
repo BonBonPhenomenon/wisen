@@ -3,12 +3,259 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wisen — Data Sources &amp; Disclaimer</title>
+  <title>Wisen — Research Methodology &amp; Data Sources</title>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── PAGE-SPECIFIC OVERRIDES ── */
+    .section-label::after { display: none; }
+
+    /* ── METHODOLOGY HERO ── */
+    .method-hero {
+      padding: 56px 48px 48px;
+      border-bottom: 1px solid var(--rule);
+      max-width: 820px;
+    }
+    .method-hero p {
+      font-size: 13px;
+      color: var(--ink-light);
+      font-weight: 300;
+      line-height: 1.85;
+      max-width: 580px;
+      margin-top: 16px;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .method-body {
+      padding: 48px 48px 0;
+      max-width: 820px;
+    }
+
+    /* ── PROSE BLOCKS ── */
+    .method-section {
+      margin-bottom: 48px;
+    }
+    .method-section h3 {
+      font-family: 'Lora', serif;
+      font-weight: 400;
+      font-size: 20px;
+      margin-bottom: 16px;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+    .method-section p {
+      font-size: 13px;
+      color: var(--ink-light);
+      font-weight: 300;
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+    .method-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── SOURCE HIERARCHY ── */
+    .hierarchy-list {
+      margin: 20px 0;
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .hierarchy-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 16px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--linen-dark);
+      align-items: start;
+      transition: background 0.14s;
+    }
+    .hierarchy-item:last-child { border-bottom: none; }
+    .hierarchy-item:hover { background: var(--linen); }
+    .hierarchy-num {
+      font-family: 'Lora', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--mauve-l);
+      line-height: 1.4;
+    }
+    .hierarchy-content {}
+    .hierarchy-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+    .hierarchy-desc {
+      font-size: 11px;
+      color: var(--ink-faint);
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    /* ── CONFIDENCE LEVELS ── */
+    .confidence-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    .confidence-card {
+      background: var(--parchment);
+      padding: 24px 22px;
+      transition: background 0.14s;
+    }
+    .confidence-card:hover { background: var(--linen); }
+    .confidence-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+    }
+    .badge-confirmed { background: var(--olive-pale); color: var(--olive); }
+    .badge-estimated { background: var(--mauve-pale); color: var(--mauve); }
+    .badge-indicative { background: var(--linen-dark); color: var(--ink-light); }
+    .confidence-def {
+      font-size: 12px;
+      color: var(--ink-light);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── REPORT SOURCES ── */
+    .report-source-block {
+      margin-bottom: 36px;
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .report-source-header {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 16px;
+      padding: 20px 24px;
+      background: var(--linen);
+      border-bottom: 1px solid var(--rule);
+      align-items: center;
+    }
+    .report-source-num {
+      font-family: 'Lora', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--mauve-l);
+      line-height: 1;
+    }
+    .report-source-title {
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ink);
+    }
+    .report-source-period {
+      font-size: 10px;
+      color: var(--ink-faint);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      text-align: right;
+      white-space: nowrap;
+    }
+    .report-source-rows {
+      padding: 0 24px;
+    }
+    .report-source-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 16px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--linen-dark);
+      font-size: 12px;
+    }
+    .report-source-row:last-child { border-bottom: none; }
+    .report-source-cat {
+      color: var(--ink-faint);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      padding-top: 1px;
+    }
+    .report-source-detail {
+      color: var(--ink-light);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    .report-source-detail a {
+      color: var(--mauve);
+      text-decoration: none;
+    }
+    .report-source-detail a:hover { text-decoration: underline; }
+    .report-source-gap {
+      font-size: 11px;
+      color: var(--ink-faint);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* ── NZ GAP NOTE ── */
+    .nz-gap-note {
+      background: var(--mauve-pale);
+      border-left: 3px solid var(--mauve);
+      border-radius: 0 8px 8px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+      font-size: 12px;
+      color: var(--ink-light);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+    .nz-gap-note strong { color: var(--mauve); font-weight: 500; }
+
+    /* ── LEGAL ── */
+    .legal-block {
+      background: var(--linen);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+    .legal-block p {
+      font-size: 12px;
+      color: var(--ink-light);
+      font-weight: 300;
+      line-height: 1.85;
+      margin-bottom: 12px;
+    }
+    .legal-block p:last-child { margin-bottom: 0; }
+
+    /* ── VERSION LINE ── */
+    .version-line {
+      font-size: 10px;
+      color: var(--ink-faint);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      padding-bottom: 48px;
+      border-top: 1px solid var(--rule);
+      padding-top: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .method-hero, .method-body { padding-left: 20px; padding-right: 20px; }
+      .confidence-grid { grid-template-columns: 1fr; }
+      .report-source-header { grid-template-columns: auto 1fr; }
+      .report-source-period { display: none; }
+      .report-source-row { grid-template-columns: 1fr; gap: 4px; }
+      .report-source-cat { font-size: 10px; color: var(--mauve-l); }
+    }
+  </style>
 </head>
 <body>
 
-    <header class="site-header">
+  <header class="site-header">
     <a class="wordmark" href="../index.html">wis<em>e</em>n</a>
 
     <div class="site-nav-centre">
@@ -33,12 +280,13 @@
             <span class="site-nav-dropdown-label">Paid Ads Benchmarks</span>
           </a>
           <div class="site-nav-dropdown-divider"></div>
-          <a class="site-nav-dropdown-item" href="disclaimer.html">
+          <a class="site-nav-dropdown-item" href="methodology.html">
             <span class="site-nav-dropdown-num">&#x2197;</span>
-            <span class="site-nav-dropdown-label">Data Sources &amp; Methodology</span>
+            <span class="site-nav-dropdown-label">Research Methodology</span>
           </a>
         </div>
       </div>
+      <a class="site-nav-link active" href="methodology.html">Methodology</a>
       <a class="site-nav-link" href="blog.html">Blog</a>
       <a class="site-nav-link" href="contact.html">Contact</a>
     </div>
@@ -46,267 +294,244 @@
     <div class="header-right">
       <div class="currency-pills">
         <button class="currency-pill active" onclick="setCurrency('both',this)">NZD + AUD</button>
-        <button class="currency-pill"        onclick="setCurrency('nzd',this)">NZD</button>
-        <button class="currency-pill"        onclick="setCurrency('aud',this)">AUD</button>
+        <button class="currency-pill" onclick="setCurrency('nzd',this)">NZD</button>
+        <button class="currency-pill" onclick="setCurrency('aud',this)">AUD</button>
       </div>
     </div>
   </header>
 
-<div class="disclaimer-content">
-        <div class="hero-eyebrow" style="margin-bottom: 18px">
-          Data sources &amp; methodology
-        </div>
-        <h2>How this data was put together</h2>
+  <!-- HERO -->
+  <div class="method-hero">
+    <div class="hero-eyebrow">Research methodology</div>
+    <h2 style="font-family:'Lora',serif;font-weight:400;font-size:clamp(28px,3.5vw,40px);line-height:1.1;margin:0">How Wisen researches</h2>
+    <p>
+      Every Wisen report is produced using a consistent research methodology: structured web research across live NZ and AU sources, reviewed and verified by Bonnie Vujcich before publication. This page documents how that process works, what the data quality levels mean, and where each report's figures come from.
+    </p>
+  </div>
 
-        <p>
-          Wisen compiles publicly available pricing information from NZ and
-          Australian agencies, freelancers, and industry publications. This page
-          documents the methodology, sources, and limitations of the research
-          across all three reports.
-        </p>
+  <div class="method-body">
 
-        <div class="method-block">
-          <h4>Research methodology</h4>
-          <p>
-            All pricing data was gathered through direct research of publicly
-            available agency websites, pricing pages, and published industry
-            benchmarks between November 2025 and May 2026. Where agencies do not
-            publish pricing, figures have been extrapolated from stated ranges
-            by comparable providers in the same market tier.
-          </p>
-          <p>
-            NZ-specific benchmark data for paid advertising is limited compared
-            to Australian market data. Where NZ-specific figures are not
-            available, estimates have been derived by applying known market
-            discount factors (NZ CPCs run approximately 14% below the US average
-            per WordStream research) to Australian or global benchmarks. These
-            estimates are clearly marked.
-          </p>
-          <p>
-            All figures are presented as indicative ranges, not guarantees.
-            Individual quotes will vary based on scope, provider, client
-            relationship, and market conditions at the time of engagement.
-          </p>
-        </div>
-
-        <h3>Report 01 — Social media agency pricing</h3>
-        <p>
-          Package pricing was gathered from publicly listed agency pages.
-          Per-post rates are compiled from freelancer platforms, agency pricing
-          pages, and industry surveys. Hourly rate benchmarks reflect commonly
-          quoted rates across both markets from mid-2024 to early 2026.
-        </p>
-
-        <h3>Report 02 — Website build &amp; maintenance</h3>
-        <p>
-          Build cost ranges reflect quoted and published pricing from NZ and AU
-          web design agencies researched in March–May 2026. Maintenance plan
-          pricing is drawn from Australian agency care plan pages (Visual Web,
-          Rocking Web, Small Biz Web Design) and NZ equivalents (MyTechGuy,
-          Alpine Studio). First-year cost estimators are constructed from the
-          midpoints of build and maintenance ranges plus estimated hosting and
-          plugin costs.
-        </p>
-
-        <h3>Report 03 — Paid ads benchmarks</h3>
-        <p>
-          Google Ads CPC and CTR benchmarks for New Zealand are sourced
-          primarily from Web Antler NZ's 2026 benchmark report (April 2026),
-          which draws on active NZ campaign data. Australian Google Ads figures
-          are from multiple sources including Rocking Web AU, Grove Foundry AU,
-          and Ape-X AU. Global benchmarks are from ALM Corp's 2026 Google Ads
-          industry benchmark report (May 2026), which covers 23 industries.
-        </p>
-        <p>
-          Meta Ads benchmarks draw on Rocking Web AU's 2026 Meta report (8,400+
-          Australian ad accounts), Digital Applied's 2026 Facebook benchmark
-          analysis, Lebesgue AI's CPM-by-country data (2026), and Triple Whale's
-          industry benchmark report (2025, updated April 2026). NZ-specific Meta
-          data is not available at industry level — AU figures are used as the
-          closest available proxy.
-        </p>
-
-        <div class="source-list">
-          <div class="section-label">Primary sources by report</div>
-
-          <div class="source-row">
-            <div class="source-cat">Social media (NZ)</div>
-            <div class="source-detail">
-              Designated Marketing NZ · PMGS Digital · BeKonstructive Marketing
-              · Queen of Swords Media · StrategyByte
-            </div>
-          </div>
-          <div class="source-row">
-            <div class="source-cat">Social media (AU)</div>
-            <div class="source-detail">
-              SOUP Agency · Catalyst Communications AU · BeKonstructive
-              Marketing AU
-            </div>
-          </div>
-          <div class="source-row">
-            <div class="source-cat">Website build (NZ)</div>
-            <div class="source-detail">
-              HornTech NZ (March 2026) · Fuel Design NZ · Alpine Studio NZ ·
-              Spiritx NZ (March 2026) · Kiwi Web Design Auckland · NZ Digital
-              (April 2026) · Lucid Media NZ (March 2026) · Click Fusion NZ ·
-              Digital Presence NZ
-            </div>
-          </div>
-          <div class="source-row">
-            <div class="source-cat">Website build (AU)</div>
-            <div class="source-detail">
-              WP Creative AU · Simply WordPress AU · Digital Nomads HQ AU ·
-              Online Optimisation AU · Rocking Web AU · Spark Interact AU ·
-              Quazic AU · Digital Junction AU
-            </div>
-          </div>
-          <div class="source-row">
-            <div class="source-cat">Website maintenance (AU)</div>
-            <div class="source-detail">
-              Visual Web AU (March 2026) · Small Biz Web Design AU · Comkey
-              Consulting AU · Flamin Code AU · Cockatoo AU
-            </div>
-          </div>
-          <div class="source-row">
-            <div class="source-cat">Website maintenance (NZ)</div>
-            <div class="source-detail">
-              MyTechGuy NZ · Alpine Studio NZ · NZ Digital
-            </div>
-          </div>
-          <div class="source-row">
-            <div class="source-cat">Google Ads (NZ)</div>
-            <div class="source-detail">
-              Web Antler NZ — Google Ads Benchmarks NZ 2026 (April 2026)
-            </div>
-          </div>
-          <div class="source-row">
-            <div class="source-cat">Google Ads (AU)</div>
-            <div class="source-detail">
-              Rocking Web AU · Grove Foundry AU (March 2026) · Ape-X AU ·
-              Digital Nomads HQ AU · ROI.com.au
-            </div>
-          </div>
-          <div class="source-row">
-            <div class="source-cat">Google Ads (global)</div>
-            <div class="source-detail">
-              ALM Corp — Google Ads Benchmarks 2026 (May 2026) · WordStream —
-              Average CPC by Country · Get-Ryze.ai — CPC by Industry 2026
-            </div>
-          </div>
-          <div class="source-row">
-            <div class="source-cat">Meta Ads (AU)</div>
-            <div class="source-detail">
-              Rocking Web AU — Meta Ads Australia Benchmarks 2026 (8,400+ AU ad
-              accounts) · Digital Applied — Facebook Benchmarks 2026 (April
-              2026)
-            </div>
-          </div>
-          <div class="source-row">
-            <div class="source-cat">Meta Ads (global)</div>
-            <div class="source-detail">
-              Lebesgue AI — Facebook CPM by Country 2026 · Triple Whale —
-              Facebook Ad Benchmarks 2025 (April 2026 update) · Vaizle —
-              Facebook Ad Benchmarks 2025 · Visible Factors — Facebook
-              Benchmarks 2026 · WebFX — Meta Marketing Benchmarks 2026
-            </div>
-          </div>
-        </div>
-
-        <h3>Legal disclaimer</h3>
-        <p>
-          All information published by Wisen is provided for general
-          informational purposes only. It does not constitute financial,
-          marketing, legal, or professional advice of any kind.
-        </p>
-        <p>
-          Pricing ranges are indicative only and based on publicly available
-          information at the time of research. Actual costs will vary depending
-          on provider, project scope, market conditions, and individual
-          circumstances. Wisen makes no warranty, express or implied, regarding
-          the accuracy, completeness, or currency of any information presented.
-        </p>
-        <p>
-          Wisen is not affiliated with, endorsed by, or in a commercial
-          relationship with any agency, platform, or provider named in these
-          reports. Agency examples are included for illustrative purposes only
-          and should not be interpreted as recommendations.
-        </p>
-        <p>
-          Meta, Google Ads, Facebook, Instagram, Shopify, WordPress,
-          WooCommerce, and all other platform names referenced are trademarks of
-          their respective owners. Their inclusion does not imply affiliation or
-          endorsement.
-        </p>
-        <p>
-          Users of this information are solely responsible for any decisions
-          made on the basis of it. Wisen accepts no liability for any loss,
-          cost, or damage arising from reliance on information contained in
-          these reports.
-        </p>
-        <p style="color: var(--ink-faint); font-size: 11px; margin-top: 28px">
-          Wisen · Market Intelligence NZ &amp; AU · Version 1.0 · May 2026 ·
-          Research period November 2025–May 2026
-        </p>
-      </div>
-      
+    <!-- HOW IT WORKS -->
+    <div class="method-section">
+      <div class="section-label" style="margin-bottom:20px">The process</div>
+      <h3>Research, then review</h3>
+      <p>
+        Wisen uses AI-assisted research to gather pricing data from publicly available NZ and AU sources -- agency websites, published pricing pages, industry benchmark reports, and platform data. That research is then reviewed by Bonnie Vujcich, who has 20 years of experience across NZ and AU marketing, before any report is published.
+      </p>
+      <p>
+        The AI does the searching. The human does the verifying. Nothing is published without that editorial review step. That is not a disclaimer -- it is how the research process is designed.
+      </p>
+      <p>
+        Each report notes the period during which its research was conducted. Marketing service pricing changes. Always check the research date before using any figure for budget planning.
+      </p>
     </div>
 
-    <script>
-      const pages = ["home", "social", "website", "ads", "disclaimer"];
-      const snavMap = {
-        social: "snav-social",
-        website: "snav-website",
-        ads: "snav-ads",
-      };
+    <!-- SOURCE HIERARCHY -->
+    <div class="method-section">
+      <div class="section-label" style="margin-bottom:20px">Source standards</div>
+      <h3>Where the data comes from</h3>
+      <p>Every data point in every Wisen report is sourced according to a strict hierarchy. Higher tiers are always preferred over lower tiers.</p>
 
-      function goPage(id) {
-        pages.forEach((p) => {
-          document
-            .getElementById("page-" + p)
-            .classList.toggle("active", p === id);
-        });
-        Object.keys(snavMap).forEach((k) => {
-          document
-            .getElementById(snavMap[k])
-            .classList.toggle("active", k === id);
-        });
-        window.scrollTo(0, 0);
-      }
+      <div class="hierarchy-list">
+        <div class="hierarchy-item">
+          <div class="hierarchy-num">1</div>
+          <div class="hierarchy-content">
+            <div class="hierarchy-title">Agency and provider pricing pages</div>
+            <div class="hierarchy-desc">Pricing published directly by the agency or freelancer on their own website. The most reliable source -- the provider is stating what they charge.</div>
+          </div>
+        </div>
+        <div class="hierarchy-item">
+          <div class="hierarchy-num">2</div>
+          <div class="hierarchy-content">
+            <div class="hierarchy-title">Published industry benchmark reports</div>
+            <div class="hierarchy-desc">Named, dated reports with a stated methodology -- IAB NZ, IAB Australia, IDNZ, The Creative Store, Aquent, and equivalents.</div>
+          </div>
+        </div>
+        <div class="hierarchy-item">
+          <div class="hierarchy-num">3</div>
+          <div class="hierarchy-content">
+            <div class="hierarchy-title">Platform-published data</div>
+            <div class="hierarchy-desc">Data published by Google, Meta, and equivalent platforms directly. Treated as primary for benchmark CPC, CPM, and CTR figures.</div>
+          </div>
+        </div>
+        <div class="hierarchy-item">
+          <div class="hierarchy-num">4</div>
+          <div class="hierarchy-content">
+            <div class="hierarchy-title">Aggregated benchmark reports</div>
+            <div class="hierarchy-desc">Reports from tools such as WordStream, AgencyAnalytics, and equivalents that aggregate data from multiple sources. Useful for context, lower confidence than primary sources.</div>
+          </div>
+        </div>
+        <div class="hierarchy-item">
+          <div class="hierarchy-num">5</div>
+          <div class="hierarchy-content">
+            <div class="hierarchy-title">Estimated or extrapolated figures</div>
+            <div class="hierarchy-desc">Where primary data is unavailable, figures may be extrapolated from comparable market data. Always flagged clearly as Estimated with the methodology noted.</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      function showTab(prefix, id, btn) {
-        const panelPrefix = prefix + "-";
-        document
-          .querySelectorAll('[id^="' + panelPrefix + '"]')
-          .forEach((p) => p.classList.remove("active"));
-        btn
-          .closest("nav")
-          .querySelectorAll(".tab-btn")
-          .forEach((b) => b.classList.remove("active"));
-        document.getElementById(panelPrefix + id).classList.add("active");
-        btn.classList.add("active");
-      }
+    <!-- CONFIDENCE LEVELS -->
+    <div class="method-section">
+      <div class="section-label" style="margin-bottom:20px">Data quality</div>
+      <h3>What the confidence levels mean</h3>
+      <p>Every data point in a Wisen report carries a confidence level. Here is what each one means.</p>
 
-      function setCurrency(val, btn) {
-        document
-          .querySelectorAll(".currency-pill")
-          .forEach((p) => p.classList.remove("active"));
-        btn.classList.add("active");
-        document.body.classList.remove("show-nzd", "show-aud");
-        if (val === "nzd") document.body.classList.add("show-nzd");
-        if (val === "aud") document.body.classList.add("show-aud");
-      }
+      <div class="confidence-grid">
+        <div class="confidence-card">
+          <div class="confidence-badge badge-confirmed">Confirmed</div>
+          <div class="confidence-def">Taken directly from a published primary source -- an agency pricing page, an industry benchmark report, or platform-published data. The figure exists exactly as stated in a named, dated, publicly accessible source.</div>
+        </div>
+        <div class="confidence-card">
+          <div class="confidence-badge badge-estimated">Estimated</div>
+          <div class="confidence-def">Extrapolated from comparable market data using a stated methodology. For example: an NZ figure derived from AU data with a market discount applied. The methodology is always noted alongside the figure.</div>
+        </div>
+        <div class="confidence-card">
+          <div class="confidence-badge badge-indicative">Indicative</div>
+          <div class="confidence-def">General market sense drawn from multiple sources, not attributable to a single confirmed figure. Useful for context and direction. Not suitable for precise budget planning without further validation.</div>
+        </div>
+      </div>
+    </div>
 
-    <!-- ══ FOOTER ════════════════════════════════════════════════ -->
+    <!-- NZ DATA GAP -->
+    <div class="method-section">
+      <div class="section-label" style="margin-bottom:20px">NZ data</div>
+      <h3>The NZ data challenge</h3>
+      <p>
+        NZ-specific primary data is structurally thinner than AU for most marketing service categories. Fewer NZ agencies publish pricing. Fewer NZ-specific benchmark reports exist. This is a known market condition, not a research failure.
+      </p>
+
+      <div class="nz-gap-note">
+        <strong>How NZ gaps are handled:</strong> Where NZ-specific primary data is unavailable, AU data is used as a proxy with a market discount applied and the methodology noted explicitly. NZ CPCs run approximately 14% below the US average -- confirmed via Web Antler NZ 2026 -- and NZ pricing generally runs slightly below AU for comparable services. Any figure derived this way is marked Estimated, not Confirmed.
+      </div>
+
+      <p>
+        Wisen never presents an AU figure as an NZ figure. Where NZ-specific data could not be found, that is stated directly in the report.
+      </p>
+    </div>
+
+    <!-- SOURCES BY REPORT -->
+    <div class="method-section">
+      <div class="section-label" style="margin-bottom:20px">Sources by report</div>
+      <h3>What each report draws on</h3>
+      <p>Each report lists its own primary sources below. Research periods are noted per report -- figures from different reports were researched at different times.</p>
+
+      <!-- REPORT 01 -->
+      <div class="report-source-block">
+        <div class="report-source-header">
+          <div class="report-source-num">01</div>
+          <div class="report-source-title">Social Media Agency Pricing</div>
+          <div class="report-source-period">Research period noted in report</div>
+        </div>
+        <div class="report-source-rows">
+          <div class="report-source-row">
+            <div class="report-source-cat">NZ agencies</div>
+            <div class="report-source-detail">Designated Marketing NZ · Wild Sea Creative NZ · Vanguard 86 NZ · Kingfisher Digital NZ · Back9 Creative NZ · PMGS Digital NZ</div>
+          </div>
+          <div class="report-source-row">
+            <div class="report-source-cat">AU agencies</div>
+            <div class="report-source-detail">SOUP Agency AU · Catalyst Communications AU · BeKonstructive Marketing AU · StrategyByte AU · Studio Slate AU</div>
+          </div>
+          <div class="report-source-row">
+            <div class="report-source-cat">Benchmarks</div>
+            <div class="report-source-detail">Sprout Social AU 2026 Social Media Statistics · Rocking Web AU Meta Ads Australia Benchmarks 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REPORT 02 -->
+      <div class="report-source-block">
+        <div class="report-source-header">
+          <div class="report-source-num">02</div>
+          <div class="report-source-title">Website Build &amp; Maintenance Costs</div>
+          <div class="report-source-period">Research period noted in report</div>
+        </div>
+        <div class="report-source-rows">
+          <div class="report-source-row">
+            <div class="report-source-cat">NZ agencies</div>
+            <div class="report-source-detail">Alpine Studio NZ · Fuel Design NZ · HornTech NZ · Lucid Media NZ · Websonic NZ · Kiwi Web Design NZ · King Tide Marketing NZ · Digital Presence NZ · MyTechGuy NZ</div>
+          </div>
+          <div class="report-source-row">
+            <div class="report-source-cat">AU agencies</div>
+            <div class="report-source-detail">Workspacein AU · Precision Digital AU · Websites That Sell AU · Visual Web AU · Small Biz Web Design AU · Rocking Web AU · VT Digital AU</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REPORT 03 -->
+      <div class="report-source-block">
+        <div class="report-source-header">
+          <div class="report-source-num">03</div>
+          <div class="report-source-title">Paid Ads Benchmarks</div>
+          <div class="report-source-period">Research period noted in report</div>
+        </div>
+        <div class="report-source-rows">
+          <div class="report-source-row">
+            <div class="report-source-cat">NZ benchmarks</div>
+            <div class="report-source-detail">Web Antler NZ Google Ads Benchmarks 2026 (April 2026) · IAB New Zealand CY2025 Advertising Revenue Report · IDNZ Digital Marketing Report 2026</div>
+          </div>
+          <div class="report-source-row">
+            <div class="report-source-cat">AU benchmarks</div>
+            <div class="report-source-detail">IAB Australia Internet Advertising Revenue Report (PwC, March 2026) · Rocking Web AU Meta Ads Benchmarks 2026 (8,400+ AU ad accounts) · Grove Foundry AU · Ape-X AU · ROI.com.au</div>
+          </div>
+          <div class="report-source-row">
+            <div class="report-source-cat">Global context</div>
+            <div class="report-source-detail">ALM Corp Google Ads Benchmarks 2026 · Lebesgue AI Facebook CPM by Country 2026 · Triple Whale Facebook Ad Benchmarks 2025</div>
+          </div>
+          <div class="report-source-row">
+            <div class="report-source-cat">NZ data note</div>
+            <div class="report-source-detail report-source-gap">NZ-specific Meta Ads data is not available at industry level. AU figures are used as the closest available proxy and are marked accordingly.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FUTURE REPORTS NOTE -->
+      <div class="note m" style="margin-top:8px">
+        <strong>Reports 04 onwards:</strong> Each new report published after launch will have its own sources section added here. Source lists are updated when new reports are released.
+      </div>
+    </div>
+
+    <!-- LEGAL -->
+    <div class="method-section">
+      <div class="section-label" style="margin-bottom:20px">Legal</div>
+      <h3>Disclaimer</h3>
+
+      <div class="legal-block">
+        <p>All information published by Wisen is provided for general informational purposes only. It does not constitute financial, marketing, legal, or professional advice of any kind.</p>
+        <p>Pricing ranges are indicative only and based on publicly available information at the time of research. Actual costs will vary depending on provider, project scope, market conditions, and individual circumstances. Wisen makes no warranty, express or implied, regarding the accuracy, completeness, or currency of any information presented.</p>
+        <p>Wisen is not affiliated with, endorsed by, or in a commercial relationship with any agency, platform, or provider named in these reports. Agency examples are included for illustrative purposes only and should not be interpreted as recommendations.</p>
+        <p>Meta, Google Ads, Facebook, Instagram, Shopify, WordPress, WooCommerce, and all other platform names referenced are trademarks of their respective owners. Their inclusion does not imply affiliation or endorsement.</p>
+        <p>Users of this information are solely responsible for any decisions made on the basis of it. Wisen accepts no liability for any loss, cost, or damage arising from reliance on information contained in these reports.</p>
+      </div>
+    </div>
+
+    <!-- VERSION -->
+    <div class="version-line">
+      Wisen · Research Methodology &amp; Data Sources · Version 2.0 · May 2026 · Bonnie Vujcich
+    </div>
+
+  </div>
+
   <footer class="site-footer">
     <div class="footer-copy">&copy; 2026 Wisen</div>
     <nav class="footer-nav">
+      <a class="footer-nav-link" href="../index.html">Home</a>
       <a class="footer-nav-link" href="../index.html#reports">Reports</a>
       <a class="footer-nav-link" href="blog.html">Blog</a>
       <a class="footer-nav-link" href="contact.html">Contact</a>
-      <a class="footer-nav-link" href="disclaimer.html">Data &amp; Disclaimer</a>
+      <a class="footer-nav-link" href="methodology.html">Methodology</a>
     </nav>
   </footer>
 
-  <script src="../js/main.js"></script>
+  <script>
+    function setCurrency(val, btn) {
+      document.querySelectorAll('.currency-pill').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.body.classList.remove('show-nzd', 'show-aud');
+      if (val === 'nzd') document.body.classList.add('show-nzd');
+      if (val === 'aud') document.body.classList.add('show-aud');
+    }
+  </script>
+
 </body>
 </html>
